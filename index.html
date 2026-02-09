@@ -12,29 +12,6 @@ body{
   background:#f5f5f5;
 }
 
-/* Scrolling Bar */
-.offer-bar {
-  width: 100%;
-  background: linear-gradient(to right, #3b1f0f, #7a3e1c);
-  color: #fff;
-  overflow: hidden;
-  padding: 10px 0;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.offer-text {
-  display: inline-block;
-  white-space: nowrap;
-  padding-left: 100%;
-  animation: scrollBar 14s linear infinite;
-}
-
-@keyframes scrollBar {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
-}
-
 /* Header */
 header{
   background:linear-gradient(to right,#3b1f0f,#5a2d16);
@@ -56,6 +33,29 @@ header h1{
 
 header p{
   font-size:16px;
+}
+
+/* Scrolling Bar */
+.offer-bar {
+  width: 100%;
+  background: linear-gradient(to right, #3b1f0f, #7a3e1c);
+  color: #fff;
+  overflow: hidden;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.offer-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scrollBar 14s linear infinite;
+}
+
+@keyframes scrollBar {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
 /* Container */
@@ -131,19 +131,19 @@ footer{
 
 <body>
 
-<!-- Scrolling Bar -->
-<div class="offer-bar">
-  <div class="offer-text">
-    🔥 Today Offer: Fresh Pickles & Chocolates | 🚚 Free Delivery Above ₹500 | 📞 WhatsApp: 9492356154
-  </div>
-</div>
-
 <!-- Header -->
 <header>
 <img src="logo.png">
 <h1>KLN PRODUCTS</h1>
 <p>Homemade & Customized Chocolates & Pickles</p>
 </header>
+
+<!-- Scrolling Bar -->
+<div class="offer-bar">
+  <div class="offer-text">
+    🔥 Today Offer: Fresh Pickles & Chocolates | 🚚 Free Delivery Above ₹500 | 📞 WhatsApp: 9492356154
+  </div>
+</div>
 
 <!-- Products -->
 <div class="container">
