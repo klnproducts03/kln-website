@@ -12,11 +12,34 @@ body{
   background:#f5f5f5;
 }
 
+/* Scrolling Bar */
+.offer-bar {
+  width: 100%;
+  background: linear-gradient(to right, #3b1f0f, #7a3e1c);
+  color: #fff;
+  overflow: hidden;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.offer-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scrollBar 14s linear infinite;
+}
+
+@keyframes scrollBar {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
 /* Header */
 header{
   background:linear-gradient(to right,#3b1f0f,#5a2d16);
   color:#fff;
-  padding:40px 20px;
+  padding:35px 20px;
   text-align:center;
 }
 
@@ -33,7 +56,6 @@ header h1{
 
 header p{
   font-size:16px;
-  opacity:0.9;
 }
 
 /* Container */
@@ -43,12 +65,11 @@ header p{
   margin:auto;
 }
 
-/* Products Grid */
+/* Products */
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
   gap:25px;
-  margin-top:20px;
 }
 
 /* Card */
@@ -57,8 +78,8 @@ header p{
   border-radius:15px;
   overflow:hidden;
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  transition:0.3s;
   text-align:center;
+  transition:0.3s;
 }
 
 .card:hover{
@@ -78,7 +99,6 @@ header p{
 .price{
   font-size:18px;
   font-weight:bold;
-  color:#333;
 }
 
 /* Button */
@@ -111,68 +131,59 @@ footer{
 
 <body>
 
-<!-- HEADER -->
+<!-- Scrolling Bar -->
+<div class="offer-bar">
+  <div class="offer-text">
+    🔥 Today Offer: Fresh Pickles & Chocolates | 🚚 Free Delivery Above ₹500 | 📞 WhatsApp: 9492356154
+  </div>
+</div>
+
+<!-- Header -->
 <header>
 <img src="logo.png">
 <h1>KLN PRODUCTS</h1>
-<p>Homemade & Customized Chocolates</p>
+<p>Homemade & Customized Chocolates & Pickles</p>
 </header>
 
-<!-- CONTENT -->
+<!-- Products -->
 <div class="container">
 
 <h2>Our Products</h2>
 
 <div class="products">
 
-<!-- Product 1 -->
 <div class="card">
 <img src="milk.jpg">
 <h3>Milk Chocolate / మిల్క్ చాక్లెట్</h3>
 <p class="price">₹150</p>
-<a class="btn"
-href="https://wa.me/919492356154?text=I%20want%20Milk%20Chocolate">
-Order on WhatsApp
-</a>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%20Milk%20Chocolate">Order</a>
 </div>
 
-<!-- Product 2 -->
 <div class="card">
 <img src="blessing.jpg">
-<h3>Blessing Chocolate / బ్లెస్సింగ్</h3>
+<h3>Blessing Chocolate</h3>
 <p class="price">₹130</p>
-<a class="btn"
-href="https://wa.me/919492356154?text=I%20want%20Blessing%20Chocolate">
-Order on WhatsApp
-</a>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%20Blessing%20Chocolate">Order</a>
 </div>
 
-<!-- Product 3 -->
 <div class="card">
-<img src="gift.jpg">
-<h3>Gift Box / గిఫ్ట్ బాక్స్</h3>
-<p class="price">₹499</p>
-<a class="btn"
-href="https://wa.me/919492356154?text=I%20want%20Gift%20Box">
-Order on WhatsApp
-</a>
+<img src="gongura.jpg">
+<h3>Gongura Chicken Pickle</h3>
+<p class="price">₹299</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%20Gongura%20Chicken%20Pickle">Order</a>
 </div>
 
-<!-- Product 4 -->
 <div class="card">
-<img src="truffle.jpg">
-<h3>Truffles / ట్రఫుల్స్</h3>
-<p class="price">₹250</p>
-<a class="btn"
-href="https://wa.me/919492356154?text=I%20want%20Truffles">
-Order on WhatsApp
-</a>
+<img src="dondakaya.jpg">
+<h3>Dondakaya Thokkudu Pickle</h3>
+<p class="price">₹199</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%20Dondakaya%20Pickle">Order</a>
 </div>
 
 </div>
 </div>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
 <p>📱 WhatsApp: 9492356154</p>
 <p>📷 Instagram: @kln_products</p>
