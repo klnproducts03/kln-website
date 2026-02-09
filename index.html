@@ -11,7 +11,42 @@ body{
   font-family:Arial, sans-serif;
   background:#f5f5f5;
 }
+<!-- ====== Top Scrolling Offer Bar ====== -->
+<div class="offer-bar">
+  <div class="offer-text">
+    🔥 Today Offer: Fresh Pickles Available | 🚚 Free Delivery Above ₹500 | 📞 WhatsApp: 9492356154
+  </div>
+</div>
 
+<style>
+.offer-bar {
+  width: 100%;
+  background: linear-gradient(to right, #3b1f0f, #7a3e1c);
+  color: #fff;
+  overflow: hidden;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.offer-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scrollBar 14s linear infinite;
+}
+
+@keyframes scrollBar {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
+<!-- ====== End Scrolling Offer Bar ====== -->
 /* Header */
 header{
   background:linear-gradient(to right,#3b1f0f,#5a2d16);
