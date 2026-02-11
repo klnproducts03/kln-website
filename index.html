@@ -2,240 +2,197 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KLN Products</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f5f5f5;
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
 }
 
 /* Header */
-header{
-  background:linear-gradient(to right,#3b1f0f,#5a2d16);
-  color:#fff;
-  padding:35px 20px;
-  text-align:center;
+.header{
+    background:#3b1f0f;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
-header img{
-  width:110px;
-  border-radius:50%;
-  border:3px solid white;
+.header img{
+    width:90px;
+    border-radius:50%;
 }
 
-header h1{
-  margin:15px 0 5px;
-  font-size:32px;
+.header h1{
+    margin:10px 0 5px;
 }
 
-/* Scroll Bar */
-.offer-bar {
-  width: 100%;
-  background: linear-gradient(to right, #3b1f0f, #7a3e1c);
-  color: #fff;
-  overflow: hidden;
-  padding: 10px 0;
-  font-weight: bold;
-  font-size: 15px;
+.header p{
+    margin:0;
 }
 
-.offer-text {
-  display: inline-block;
-  white-space: nowrap;
-  padding-left: 100%;
-  animation: scrollBar 14s linear infinite;
-}
-
-@keyframes scrollBar {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
-}
-
-/* Container */
-.container{
-  padding:25px;
-  max-width:1200px;
-  margin:auto;
+/* Scrolling Text */
+.marquee{
+    background:#ffd700;
+    padding:8px;
+    font-weight:bold;
 }
 
 /* Products */
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:25px;
+.container{
+    padding:20px;
 }
 
-/* Card */
-.card{
-  background:white;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  text-align:center;
+.section-title{
+    font-size:26px;
+    margin-bottom:15px;
 }
 
-.card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
+/* Product Card */
+.product{
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
 }
 
-.card h3{
-  margin:10px;
-  font-size:16px;
+.product img{
+    width:100%;
+    max-width:250px;
+    border-radius:10px;
+}
+
+.product h3{
+    margin:10px 0 5px;
 }
 
 .price{
-  font-size:17px;
-  font-weight:bold;
-  color:#333;
+    font-size:18px;
+    font-weight:bold;
+    margin:5px 0;
 }
 
-/* Button */
-.btn{
-  background:#25D366;
-  color:white;
-  padding:10px 15px;
-  text-decoration:none;
-  border-radius:6px;
-  display:inline-block;
-  margin:10px 0 15px;
-  font-weight:bold;
+.whatsapp{
+    display:inline-block;
+    margin-top:10px;
+    background:#25d366;
+    color:white;
+    padding:10px 15px;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FSSAI Section */
+.fssai{
+    background:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+    border-top:3px solid green;
+}
+
+.fssai img{
+    width:120px;
+    margin-bottom:10px;
+}
+
+.fssai p{
+    font-weight:bold;
 }
 
 /* Footer */
-footer{
-  background:#3b1f0f;
-  color:white;
-  text-align:center;
-  padding:20px;
-  margin-top:40px;
-  font-size:14px;
+.footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:10px;
+    font-size:14px;
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- Header -->
-<header>
-<img src="logo.png">
-<h1>KLN PRODUCTS</h1>
-<p>Homemade Chocolates & Pickles</p>
-</header>
+<div class="header">
+    <img src="logo.png">
+    <h1>KLN PRODUCTS</h1>
+    <p>Homemade & Customized Pickles & Chocolates</p>
+</div>
 
-<!-- Scroll -->
-<div class="offer-bar">
-  <div class="offer-text">
-    🔥 Fresh Pickles Available | 🚚 Free Delivery Above ₹500 | 📞 WhatsApp: 9492356154
-  </div>
+<!-- Scrolling -->
+<div class="marquee">
+<marquee>📞 Order on WhatsApp: 9492356154 | Fresh Homemade Pickles Available Daily 🍴</marquee>
 </div>
 
 <!-- Products -->
 <div class="container">
 
-<h2>Our Products</h2>
+<h2 class="section-title">Our Products</h2>
 
-<div class="products">
-
-<!-- ================= CHOCOLATES (OLD) ================= -->
-
-<div class="card">
-<img src="milk.jpg">
-<h3>Milk Chocolate / మిల్క్ చాక్లెట్</h3>
-<p class="price">₹150</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%20Milk%20Chocolate">Order</a>
-</div>
-
-<div class="card">
-<img src="blessing.jpg">
-<h3>Blessing Chocolate / బ్లెస్సింగ్ చాక్లెట్</h3>
-<p class="price">₹130</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%20Blessing%20Chocolate">Order</a>
-</div>
-
-<!-- ================= BONELESS CHICKEN PICKLE ================= -->
-
-<!-- 280g -->
-<div class="card">
+<!-- Product 1 -->
+<div class="product">
 <img src="BCP.png">
-<h3>Boneless Chicken Pickle 280g<br>బోన్‌లెస్ చికెన్ పచ్చడి</h3>
+
+<h3>Boneless Chicken Pickle / బోన్లెస్ చికెన్ పికిల్</h3>
+
 <p class="price">280g - ₹300</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%20280g%20Boneless%20Chicken%20Pickle">Order</a>
-</div>
-
-<!-- 500g -->
-<div class="card">
-<img src="BCP.png">
-<h3>Boneless Chicken Pickle 500g<br>బోన్‌లెస్ చికెన్ పచ్చడి</h3>
 <p class="price">500g - ₹489</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%20500g%20Boneless%20Chicken%20Pickle">Order</a>
-</div>
-
-<!-- 1000g -->
-<div class="card">
-<img src="BCP.png">
-<h3>Boneless Chicken Pickle 1000g<br>బోన్‌లెస్ చికెన్ పచ్చడి</h3>
 <p class="price">1000g - ₹840</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%201kg%20Boneless%20Chicken%20Pickle">Order</a>
+
+<a class="whatsapp" href="https://wa.me/919492356154?text=I%20want%20Boneless%20Chicken%20Pickle">Order on WhatsApp</a>
 </div>
 
-<!-- ================= GONGURA CHICKEN PICKLE ================= -->
-
-<!-- 280g -->
-<div class="card">
+<!-- Product 2 -->
+<div class="product">
 <img src="BCGP.png">
-<h3>Boneless Gongura Chicken 280g<br>గోంగూర చికెన్ పచ్చడి</h3>
+
+<h3>Boneless Chicken Gongura Pickle / గోంగూర చికెన్ పికిల్</h3>
+
 <p class="price">280g - ₹390</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%20280g%20Gongura%20Chicken%20Pickle">Order</a>
-</div>
-
-<!-- 500g -->
-<div class="card">
-<img src="BCGP.png">
-<h3>Boneless Gongura Chicken 500g<br>గోంగూర చికెన్ పచ్చడి</h3>
 <p class="price">500g - ₹660</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%20500g%20Gongura%20Chicken%20Pickle">Order</a>
-</div>
-
-<!-- 1000g -->
-<div class="card">
-<img src="BCGP.png">
-<h3>Boneless Gongura Chicken 1000g<br>గోంగూర చికెన్ పచ్చడి</h3>
 <p class="price">1000g - ₹930</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%201kg%20Gongura%20Chicken%20Pickle">Order</a>
+
+<a class="whatsapp" href="https://wa.me/919492356154?text=I%20want%20Boneless%20Gongura%20Chicken%20Pickle">Order on WhatsApp</a>
 </div>
 
-<!-- ================= DONDAGAYA THOKKU ================= -->
-
-<!-- 500g -->
-<div class="card">
+<!-- Product 3 -->
+<div class="product">
 <img src="SNDTP.png">
-<h3>Dondakaya Thokku 500g<br>నెల్లూరు దొండకాయ తొక్కు</h3>
+
+<h3>Nellore Dondakaya Thokku Pickle / నెల్లూరు దొండకాయ తొక్కు పికిల్</h3>
+
 <p class="price">500g - ₹360</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%20500g%20Dondakaya%20Thokku">Order</a>
-</div>
-
-<!-- 1000g -->
-<div class="card">
-<img src="SNDTP.png">
-<h3>Dondakaya Thokku 1000g<br>నెల్లూరు దొండకాయ తొక్కు</h3>
 <p class="price">1000g - ₹630</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%201kg%20Dondakaya%20Thokku">Order</a>
+
+<a class="whatsapp" href="https://wa.me/919492356154?text=I%20want%20Nellore%20Dondakaya%20Pickle">Order on WhatsApp</a>
 </div>
 
 </div>
+
+<!-- FSSAI Section -->
+<div class="fssai">
+
+<img src="fssai.png">
+
+<p>FSSAI Licensed Food Business</p>
+
+<p>License No: 20125182000688</p>
+
 </div>
 
 <!-- Footer -->
-<footer>
-<p>📱 WhatsApp: 9492356154</p>
-<p>📷 Instagram: @kln_products</p>
-<p>© 2026 KLN Products</p>
-</footer>
+<div class="footer">
+© 2026 KLN PRODUCTS | All Rights Reserved
+</div>
 
 </body>
 </html>
