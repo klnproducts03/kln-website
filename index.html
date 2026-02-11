@@ -31,11 +31,7 @@ header h1{
   font-size:32px;
 }
 
-header p{
-  font-size:16px;
-}
-
-/* Scrolling Bar */
+/* Scroll Bar */
 .offer-bar {
   width: 100%;
   background: linear-gradient(to right, #3b1f0f, #7a3e1c);
@@ -79,11 +75,6 @@ header p{
   overflow:hidden;
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
   text-align:center;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
 }
 
 .card img{
@@ -93,12 +84,14 @@ header p{
 }
 
 .card h3{
-  margin:12px 10px;
+  margin:10px;
+  font-size:16px;
 }
 
 .price{
-  font-size:18px;
+  font-size:17px;
   font-weight:bold;
+  color:#333;
 }
 
 /* Button */
@@ -109,12 +102,8 @@ header p{
   text-decoration:none;
   border-radius:6px;
   display:inline-block;
-  margin:12px 0 18px;
+  margin:10px 0 15px;
   font-weight:bold;
-}
-
-.btn:hover{
-  background:#1da851;
 }
 
 /* Footer */
@@ -135,13 +124,13 @@ footer{
 <header>
 <img src="logo.png">
 <h1>KLN PRODUCTS</h1>
-<p>Homemade & Customized Chocolates & Pickles</p>
+<p>Homemade Chocolates & Pickles</p>
 </header>
 
-<!-- Scrolling Bar -->
+<!-- Scroll -->
 <div class="offer-bar">
   <div class="offer-text">
-    🔥 Today Offer: Fresh Pickles & Chocolates | 🚚 Free Delivery Above ₹500 | 📞 WhatsApp: 9492356154
+    🔥 Fresh Pickles Available | 🚚 Free Delivery Above ₹500 | 📞 WhatsApp: 9492356154
   </div>
 </div>
 
@@ -152,6 +141,8 @@ footer{
 
 <div class="products">
 
+<!-- ================= CHOCOLATES (OLD) ================= -->
+
 <div class="card">
 <img src="milk.jpg">
 <h3>Milk Chocolate / మిల్క్ చాక్లెట్</h3>
@@ -161,23 +152,79 @@ footer{
 
 <div class="card">
 <img src="blessing.jpg">
-<h3>Blessing Chocolate</h3>
+<h3>Blessing Chocolate / బ్లెస్సింగ్ చాక్లెట్</h3>
 <p class="price">₹130</p>
 <a class="btn" href="https://wa.me/919492356154?text=I%20want%20Blessing%20Chocolate">Order</a>
 </div>
 
+<!-- ================= BONELESS CHICKEN PICKLE ================= -->
+
+<!-- 280g -->
 <div class="card">
-<img src="gongura.jpg">
-<h3>Gongura Chicken Pickle</h3>
-<p class="price">₹299</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%20Gongura%20Chicken%20Pickle">Order</a>
+<img src="BCP.PNG">
+<h3>Boneless Chicken Pickle 280g<br>బోన్‌లెస్ చికెన్ పచ్చడి</h3>
+<p class="price">280g - ₹300</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%20280g%20Boneless%20Chicken%20Pickle">Order</a>
 </div>
 
+<!-- 500g -->
 <div class="card">
-<img src="dondakaya.jpg">
-<h3>Dondakaya Thokkudu Pickle</h3>
-<p class="price">₹199</p>
-<a class="btn" href="https://wa.me/919492356154?text=I%20want%20Dondakaya%20Pickle">Order</a>
+<img src="BCP.PNG">
+<h3>Boneless Chicken Pickle 500g<br>బోన్‌లెస్ చికెన్ పచ్చడి</h3>
+<p class="price">500g - ₹489</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%20500g%20Boneless%20Chicken%20Pickle">Order</a>
+</div>
+
+<!-- 1000g -->
+<div class="card">
+<img src="BCP.PNG">
+<h3>Boneless Chicken Pickle 1000g<br>బోన్‌లెస్ చికెన్ పచ్చడి</h3>
+<p class="price">1000g - ₹840</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%201kg%20Boneless%20Chicken%20Pickle">Order</a>
+</div>
+
+<!-- ================= GONGURA CHICKEN PICKLE ================= -->
+
+<!-- 280g -->
+<div class="card">
+<img src="BCGP.PNG">
+<h3>Boneless Gongura Chicken 280g<br>గోంగూర చికెన్ పచ్చడి</h3>
+<p class="price">280g - ₹390</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%20280g%20Gongura%20Chicken%20Pickle">Order</a>
+</div>
+
+<!-- 500g -->
+<div class="card">
+<img src="BCGP.PNG">
+<h3>Boneless Gongura Chicken 500g<br>గోంగూర చికెన్ పచ్చడి</h3>
+<p class="price">500g - ₹660</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%20500g%20Gongura%20Chicken%20Pickle">Order</a>
+</div>
+
+<!-- 1000g -->
+<div class="card">
+<img src="BCGP.PNG">
+<h3>Boneless Gongura Chicken 1000g<br>గోంగూర చికెన్ పచ్చడి</h3>
+<p class="price">1000g - ₹930</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%201kg%20Gongura%20Chicken%20Pickle">Order</a>
+</div>
+
+<!-- ================= DONDAGAYA THOKKU ================= -->
+
+<!-- 500g -->
+<div class="card">
+<img src="SNDTP.PNG">
+<h3>Dondakaya Thokku 500g<br>నెల్లూరు దొండకాయ తొక్కు</h3>
+<p class="price">500g - ₹360</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%20500g%20Dondakaya%20Thokku">Order</a>
+</div>
+
+<!-- 1000g -->
+<div class="card">
+<img src="SNDTP.PNG">
+<h3>Dondakaya Thokku 1000g<br>నెల్లూరు దొండకాయ తొక్కు</h3>
+<p class="price">1000g - ₹630</p>
+<a class="btn" href="https://wa.me/919492356154?text=I%20want%201kg%20Dondakaya%20Thokku">Order</a>
 </div>
 
 </div>
