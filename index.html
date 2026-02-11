@@ -4,116 +4,116 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KLN Products</title>
+<title>KLN PRODUCTS</title>
 
 <style>
 
 body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
+margin:0;
+font-family:Arial, sans-serif;
+background:#f5f5f5;
 }
 
 /* Header */
 .header{
-    background:#3b1f0f;
-    color:white;
-    text-align:center;
-    padding:20px;
+background:#4a2600;
+color:white;
+text-align:center;
+padding:25px;
 }
 
 .header img{
-    width:90px;
-    border-radius:50%;
+width:90px;
+border-radius:50%;
 }
 
 .header h1{
-    margin:10px 0 5px;
+margin:10px 0 5px;
 }
 
 .header p{
-    margin:0;
+margin:0;
+font-size:15px;
 }
 
 /* Scrolling Text */
-.marquee{
-    background:#ffd700;
-    padding:8px;
-    font-weight:bold;
+.scroll{
+background:#ffd700;
+color:#000;
+padding:8px;
+font-weight:bold;
+overflow:hidden;
+white-space:nowrap;
 }
 
-/* Products */
-.container{
-    padding:20px;
+.scroll span{
+display:inline-block;
+padding-left:100%;
+animation: scroll 15s linear infinite;
 }
 
-.section-title{
-    font-size:26px;
-    margin-bottom:15px;
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
 }
 
-/* Product Card */
-.product{
-    background:white;
-    border-radius:10px;
-    padding:15px;
-    margin-bottom:20px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    text-align:center;
+/* Products Section */
+.products{
+padding:20px;
 }
 
-.product img{
-    width:100%;
-    max-width:250px;
-    border-radius:10px;
+.products h2{
+text-align:center;
+margin-bottom:20px;
 }
 
-.product h3{
-    margin:10px 0 5px;
+.card{
+background:white;
+border-radius:10px;
+box-shadow:0 0 5px gray;
+padding:15px;
+margin-bottom:20px;
+text-align:center;
+}
+
+.card img{
+width:100%;
+max-width:250px;
+border-radius:8px;
+}
+
+.card h3{
+margin:10px 0 5px;
 }
 
 .price{
-    font-size:18px;
-    font-weight:bold;
-    margin:5px 0;
+color:green;
+font-weight:bold;
+margin:5px 0;
 }
 
-.whatsapp{
-    display:inline-block;
-    margin-top:10px;
-    background:#25d366;
-    color:white;
-    padding:10px 15px;
-    border-radius:5px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* FSSAI Section */
-.fssai{
-    background:#fff;
-    text-align:center;
-    padding:20px;
-    margin-top:20px;
-    border-top:3px solid green;
-}
-
-.fssai img{
-    width:120px;
-    margin-bottom:10px;
-}
-
-.fssai p{
-    font-weight:bold;
+.btn{
+background:green;
+color:white;
+padding:8px 15px;
+border-radius:5px;
+text-decoration:none;
+display:inline-block;
+margin-top:5px;
 }
 
 /* Footer */
 .footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:10px;
-    font-size:14px;
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
+}
+
+.footer img{
+width:120px;
+margin-bottom:10px;
 }
 
 </style>
@@ -121,77 +121,106 @@ body{
 
 <body>
 
-<!-- Header -->
+<!-- HEADER -->
 <div class="header">
-    <img src="logo.png">
-    <h1>KLN PRODUCTS</h1>
-    <p>Homemade & Customized Pickles & Chocolates</p>
+
+<img src="logo.png">
+
+<h1>KLN PRODUCTS</h1>
+
+<p>Homemade & Customized Chocolates</p>
+
+<p>📞 9492356154 | 📷 @kln_products</p>
+
 </div>
 
-<!-- Scrolling -->
-<div class="marquee">
-<marquee>📞 Order on WhatsApp: 9492356154 | Fresh Homemade Pickles Available Daily 🍴</marquee>
+
+<!-- SCROLLING TEXT -->
+<div class="scroll">
+<span>
+🎉 Pure Homemade Pickles & Chocolates | Fresh & Hygienic | Order on WhatsApp | Best Quality Guaranteed 🎉
+</span>
 </div>
 
-<!-- Products -->
-<div class="container">
 
-<h2 class="section-title">Our Products</h2>
+<!-- PRODUCTS -->
+<div class="products">
 
-<!-- Product 1 -->
-<div class="product">
+<h2>Our Products</h2>
+
+
+<!-- PRODUCT 1 -->
+<div class="card">
+
 <img src="BCP.png">
 
-<h3>Boneless Chicken Pickle / బోన్లెస్ చికెన్ పికిల్</h3>
+<h3>Boneless Chicken Pickle<br>బోన్‌లెస్ చికెన్ పికిల్</h3>
 
 <p class="price">280g - ₹300</p>
 <p class="price">500g - ₹489</p>
 <p class="price">1000g - ₹840</p>
 
-<a class="whatsapp" href="https://wa.me/919492356154?text=I%20want%20Boneless%20Chicken%20Pickle">Order on WhatsApp</a>
+<a class="btn"
+href="https://wa.me/919492356154?text=I want Boneless Chicken Pickle"
+target="_blank">
+Order on WhatsApp
+</a>
+
 </div>
 
-<!-- Product 2 -->
-<div class="product">
+
+<!-- PRODUCT 2 -->
+<div class="card">
+
 <img src="BCGP.png">
 
-<h3>Boneless Chicken Gongura Pickle / గోంగూర చికెన్ పికిల్</h3>
+<h3>Boneless Chicken Gongura Pickle<br>బోన్‌లెస్ చికెన్ గోంగూర పికిల్</h3>
 
 <p class="price">280g - ₹390</p>
 <p class="price">500g - ₹660</p>
 <p class="price">1000g - ₹930</p>
 
-<a class="whatsapp" href="https://wa.me/919492356154?text=I%20want%20Boneless%20Gongura%20Chicken%20Pickle">Order on WhatsApp</a>
+<a class="btn"
+href="https://wa.me/919492356154?text=I want Boneless Chicken Gongura Pickle"
+target="_blank">
+Order on WhatsApp
+</a>
+
 </div>
 
-<!-- Product 3 -->
-<div class="product">
+
+<!-- PRODUCT 3 -->
+<div class="card">
+
 <img src="SNDTP.png">
 
-<h3>Nellore Dondakaya Thokku Pickle / నెల్లూరు దొండకాయ తొక్కు పికిల్</h3>
+<h3>Special Nellore Dondakaya Thokku Pickle<br>స్పెషల్ నెల్లూరు దొండకాయ తొక్కు పికిల్</h3>
 
 <p class="price">500g - ₹360</p>
 <p class="price">1000g - ₹630</p>
 
-<a class="whatsapp" href="https://wa.me/919492356154?text=I%20want%20Nellore%20Dondakaya%20Pickle">Order on WhatsApp</a>
-</div>
+<a class="btn"
+href="https://wa.me/919492356154?text=I want Dondakaya Thokku Pickle"
+target="_blank">
+Order on WhatsApp
+</a>
 
 </div>
 
-<!-- FSSAI Section -->
-<div class="fssai">
+</div>
+
+
+<!-- FSSAI SECTION -->
+<div class="footer">
 
 <img src="fssai.png">
 
-<p>FSSAI Licensed Food Business</p>
+<p><b>FSSAI Licensed Food Business</b></p>
 
 <p>License No: 20125182000688</p>
 
-</div>
+<p>© 2026 KLN PRODUCTS</p>
 
-<!-- Footer -->
-<div class="footer">
-© 2026 KLN PRODUCTS | All Rights Reserved
 </div>
 
 </body>
