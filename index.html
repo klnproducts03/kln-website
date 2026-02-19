@@ -6,172 +6,224 @@
 <title>KLN PRODUCTS</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#f5f5f5;}
-.header{background:#4a2600;color:white;text-align:center;padding:25px;}
-.header img{width:90px;border-radius:50%;}
-.scroll{background:#ffd700;color:#000;padding:8px;font-weight:bold;overflow:hidden;white-space:nowrap;}
-.scroll span{display:inline-block;padding-left:100%;animation:scroll 15s linear infinite;}
-@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f5f5f5;
+}
 
-.category{padding:20px;text-align:center;}
-.cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;}
-.cat-box{padding:18px;border-radius:12px;color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 8px gray;}
-.podi{background:#ff9800;}
-.pickle{background:#4caf50;}
+/* HEADER */
+.header{
+background:#4a2600;
+color:white;
+text-align:center;
+padding:25px;
+}
+.header img{width:90px;border-radius:50%;}
+.header h1{margin:10px 0 5px;}
+.header p{margin:0;font-size:15px;}
+
+/* SCROLL */
+.scroll{
+background:#ffd700;
+color:#000;
+padding:8px;
+font-weight:bold;
+overflow:hidden;
+white-space:nowrap;
+}
+.scroll span{
+display:inline-block;
+padding-left:100%;
+animation: scroll 15s linear infinite;
+}
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+/* CATEGORY SECTION */
+.category-section{
+padding:25px;
+text-align:center;
+background:url('BG.png') center/cover no-repeat;
+}
+.category-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+max-width:500px;
+margin:auto;
+}
+.cat-btn{
+padding:20px;
+border-radius:12px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+.podis{background:#ff9800;}
+.pickles{background:#4caf50;}
 .choco{background:#9c27b0;}
 .poster{background:#2196f3;}
 
-.products{display:none;padding:20px;}
-.products h2{text-align:center;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;}
-.card{background:white;border-radius:10px;box-shadow:0 0 6px gray;padding:15px;text-align:center;}
-.card img{width:100%;max-width:220px;border-radius:8px;}
-.price{color:green;font-weight:bold;margin:4px 0;}
-.btn{background:green;color:white;padding:8px 15px;border-radius:5px;text-decoration:none;display:inline-block;margin-top:5px;}
+/* PRODUCT SECTION */
+.products{
+display:none;
+padding:20px;
+background-size:cover;
+background-position:center;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+}
+.card{
+background:white;
+border-radius:10px;
+box-shadow:0 0 6px gray;
+padding:15px;
+text-align:center;
+}
+.card img{
+width:100%;
+max-width:220px;
+border-radius:8px;
+}
+.price{color:green;font-weight:bold;}
+.btn{
+background:green;
+color:white;
+padding:8px 15px;
+border-radius:5px;
+text-decoration:none;
+display:inline-block;
+margin-top:5px;
+}
 
-.ads{height:120px;background:#ddd;margin:20px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#555;}
+/* ADS SPACE */
+.ads{
+margin:20px;
+padding:25px;
+background:#ddd;
+text-align:center;
+font-weight:bold;
+}
 
-.footer{background:#222;color:white;text-align:center;padding:20px;}
+/* FOOTER */
+.footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
+}
 .footer img{width:120px;margin-bottom:10px;}
 </style>
-
-<script>
-function showCategory(id){
-document.querySelectorAll('.products').forEach(el=>el.style.display='none');
-document.getElementById(id).style.display='block';
-window.scrollTo(0,document.getElementById(id).offsetTop);
-}
-</script>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
 <img src="logo.png">
 <h1>KLN PRODUCTS</h1>
 <p>Homemade Pickles, Podis & Customized Chocolates</p>
-<p>📞 9492356154 | 📷 @kln_products</p>
+<p> 9492356154 |  @kln_products</p>
 </div>
 
+<!-- SCROLL -->
 <div class="scroll">
-<span>🎉 Fresh Homemade Pickles & Podis | Free Delivery Above ₹500 | Order on WhatsApp 🎉</span>
+<span> Fresh Homemade Pickles & Podis | Free Delivery Above 500 | Order on WhatsApp </span>
 </div>
 
-<div class="category">
+<!-- CATEGORY -->
+<div class="category-section">
 <h2>Our Products</h2>
-<p>👇 Click the category</p>
+<p> Click the category</p>
 
-<div class="cat-grid">
-<div class="cat-box podi" onclick="showCategory('podis')">Podis</div>
-<div class="cat-box pickle" onclick="showCategory('pickles')">Pickles</div>
-<div class="cat-box choco" onclick="showCategory('chocolates')">Customized Chocolates</div>
-<div class="cat-box poster" onclick="showCategory('poster')">Photo Poster</div>
-</div>
-</div>
-
-<!-- PODIS -->
-<div id="podis" class="products">
-<h2>Podis</h2>
-<div class="grid">
-
-<div class="card">
-<img src="KPP.png">
-<h3>Nellore Karivepaku Podi</h3>
-<p class="price">100g – ₹--</p>
-<p class="price">250g – ₹--</p>
-<p class="price">500g – ₹--</p>
-<a class="btn" href="https://wa.me/919492356154">Order</a>
-</div>
-
-<div class="card">
-<img src="SPP.png">
-<h3>Nellore Senagala Podi</h3>
-<p class="price">100g – ₹--</p>
-<p class="price">250g – ₹--</p>
-<p class="price">500g – ₹--</p>
-<a class="btn" href="https://wa.me/919492356154">Order</a>
-</div>
-
-<div class="card">
-<img src="IK.png">
-<h3>Idly Karam Podi</h3>
-<p class="price">100g – ₹--</p>
-<p class="price">250g – ₹--</p>
-<p class="price">500g – ₹--</p>
-<a class="btn" href="https://wa.me/919492356154">Order</a>
-</div>
-
+<div class="category-grid">
+<div class="cat-btn podis" onclick="showProducts('podis','PDBG.png')">Podis</div>
+<div class="cat-btn pickles" onclick="showProducts('pickles','PKBG.png')">Pickles</div>
+<div class="cat-btn choco" onclick="showProducts('choco','choco_bg.jpg')">Customized Chocolates</div>
+<div class="cat-btn poster" onclick="showProducts('poster','poster_bg.jpg')">Photo Poster</div>
 </div>
 </div>
 
-<!-- PICKLES -->
-<div id="pickles" class="products">
-<h2>Pickles</h2>
-<div class="grid">
-
-<div class="card">
-<img src="BCP.png">
-<h3>Boneless Chicken Pickle</h3>
-<p class="price">280g – ₹300</p>
-<p class="price">500g – ₹489</p>
-<p class="price">1kg – ₹840</p>
-<a class="btn" href="https://wa.me/919492356154">Order</a>
-</div>
-
-<div class="card">
-<img src="BCGP.png">
-<h3>Gongura Chicken Pickle</h3>
-<p class="price">280g – ₹390</p>
-<p class="price">500g – ₹660</p>
-<p class="price">1kg – ₹930</p>
-<a class="btn" href="https://wa.me/919492356154">Order</a>
-</div>
-
-<div class="card">
-<img src="SNDTP.png">
-<h3>Dondakaya Thokku</h3>
-<p class="price">500g – ₹360</p>
-<p class="price">1kg – ₹630</p>
-<a class="btn" href="https://wa.me/919492356154">Order</a>
-</div>
-
-</div>
-</div>
-
-<!-- CHOCOLATES -->
-<div id="chocolates" class="products">
-<h2>Customized Chocolates</h2>
-<div class="grid">
-<div class="card">
-<img src="KLNC.png">
-<h3>Photo Chocolates</h3>
-<p class="price">Starting from ₹99</p>
-<a class="btn" href="https://wa.me/919492356154">Order</a>
-</div>
-</div>
-</div>
-
-<!-- POSTER -->
-<div id="poster" class="products">
-<h2>Customized Photo Poster</h2>
-<div class="grid">
-<div class="card">
-<img src="KLNB.png">
-<h3>Poster Designing</h3>
-<p class="price">₹99 – ₹399</p>
-<a class="btn" href="https://wa.me/919492356154">Order</a>
-</div>
-</div>
+<!-- PRODUCTS AREA -->
+<div id="productSection" class="products">
+<div class="grid" id="productGrid"></div>
 </div>
 
 <div class="ads">Your Ads / Offers will show here</div>
 
+<!-- FOOTER -->
 <div class="footer">
 <img src="fssai.png">
 <p><b>FSSAI Licensed Food Business</b></p>
 <p>License No: 20125182000688</p>
-<p>© 2026 KLN PRODUCTS</p>
+<p>� 2026 KLN PRODUCTS</p>
 </div>
+
+<script>
+const products = {
+
+podis: [
+{name:"Karivepaku Podi 100g", img:"karivepaku.png", price:"120"},
+{name:"Karivepaku Podi 250g", img:"karivepaku.png", price:"250"},
+{name:"Karivepaku Podi 500g", img:"karivepaku.png", price:"480"},
+
+{name:"Senagapodi 100g", img:"senagapodi.png", price:"100"},
+{name:"Senagapodi 250g", img:"senagapodi.png", price:"220"},
+{name:"Senagapodi 500g", img:"senagapodi.png", price:"420"},
+
+{name:"Idly Karam 100g", img:"idlikaram.png", price:"110"},
+{name:"Idly Karam 250g", img:"idlikaram.png", price:"240"},
+{name:"Idly Karam 500g", img:"idlikaram.png", price:"450"}
+],
+
+pickles: [
+{name:"Boneless Chicken Pickle 280g", img:"BCP.png", price:"300"},
+{name:"Boneless Chicken Pickle 500g", img:"BCP.png", price:"489"},
+{name:"Boneless Chicken Pickle 1kg", img:"BCP.png", price:"840"},
+
+{name:"Gongura Chicken Pickle 280g", img:"BCGP.png", price:"390"},
+{name:"Gongura Chicken Pickle 500g", img:"BCGP.png", price:"660"},
+{name:"Gongura Chicken Pickle 1kg", img:"BCGP.png", price:"930"},
+
+{name:"Dondakaya Thokku 500g", img:"SNDTP.png", price:"360"},
+{name:"Dondakaya Thokku 1kg", img:"SNDTP.png", price:"630"}
+],
+
+choco: [
+{name:"Customized Chocolates", img:"KLNC.png", price:"Starting 7"},
+],
+
+poster: [
+{name:"Poster Designing", img:"KLNB.png", price:"99 � 399"},
+]
+};
+
+function showProducts(category, bgImage){
+document.getElementById("productSection").style.display="block";
+document.getElementById("productSection").style.background=`url(${bgImage}) center/cover no-repeat`;
+
+const grid = document.getElementById("productGrid");
+grid.innerHTML="";
+
+products[category].forEach(item=>{
+grid.innerHTML += `
+<div class="card">
+<img src="${item.img}">
+<h3>${item.name}</h3>
+<p class="price">${item.price}</p>
+<a class="btn" href="https://wa.me/919492356154?text=I want ${item.name}">Order</a>
+</div>`;
+});
+window.scrollTo({top:600,behavior:'smooth'});
+}
+</script>
 
 </body>
 </html>
