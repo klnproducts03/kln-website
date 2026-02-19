@@ -6,11 +6,7 @@
 <title>KLN PRODUCTS</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#f5f5f5;
-}
+body{margin:0;font-family:Arial, sans-serif;background:#f5f5f5;}
 
 /* HEADER */
 .header{
@@ -19,10 +15,7 @@ color:white;
 text-align:center;
 padding:25px;
 }
-.header img{
-width:90px;
-border-radius:50%;
-}
+.header img{width:90px;border-radius:50%;}
 .header h1{margin:10px 0 5px;}
 .header p{margin:0;font-size:15px;}
 
@@ -50,6 +43,7 @@ animation:scroll 15s linear infinite;
 background:url('BG.png') center/cover no-repeat;
 padding:20px;
 position:relative;
+transition:0.5s;
 }
 .section::before{
 content:"";
@@ -57,10 +51,7 @@ position:absolute;
 top:0;left:0;right:0;bottom:0;
 background:rgba(0,0,0,0.55);
 }
-.section-content{
-position:relative;
-z-index:1;
-}
+.section-content{position:relative;z-index:1;}
 
 /* CATEGORY BUTTONS */
 .cat-grid{
@@ -84,10 +75,17 @@ box-shadow:0 4px 10px rgba(0,0,0,0.4);
 .choco{background:#9c27b0;}
 .poster{background:#2196f3;}
 
-/* PRODUCT GRID */
-.products{
-padding:20px;
+/* CATEGORY TITLE */
+.cat-title{
+text-align:center;
+font-size:22px;
+font-weight:bold;
+margin:10px 0;
+color:#4a2600;
 }
+
+/* PRODUCTS */
+.products{padding:20px;}
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -107,11 +105,7 @@ height:130px;
 object-fit:cover;
 border-radius:8px;
 }
-.price{
-color:green;
-font-weight:bold;
-margin:4px 0;
-}
+.price{color:green;font-weight:bold;margin:4px 0;}
 .btn{
 background:green;
 color:white;
@@ -139,9 +133,21 @@ color:white;
 text-align:center;
 padding:20px;
 }
-.footer img{
-width:120px;
-margin-bottom:10px;
+.footer img{width:120px;margin-bottom:10px;}
+
+/* WHATSAPP FIXED */
+.whatsapp-float{
+position:fixed;
+bottom:15px;
+right:15px;
+background:#25D366;
+color:white;
+padding:12px 15px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+z-index:999;
 }
 </style>
 </head>
@@ -153,7 +159,7 @@ margin-bottom:10px;
 <img src="logo.png">
 <h1>KLN PRODUCTS</h1>
 <p>Homemade Pickles, Podis & Customized Chocolates</p>
-<p> 9492356154 |  @kln_products</p>
+<p>&#128222; <a href="tel:9492356154" style="color:white;text-decoration:none;">9492356154</a> | &#128247; @kln_products</p>
 </div>
 
 <!-- SCROLL -->
@@ -162,28 +168,31 @@ margin-bottom:10px;
 </div>
 
 <!-- CATEGORY SECTION -->
-<div class="section">
+<div id="bgSection" class="section">
 <div class="section-content">
 
 <h2 style="text-align:center;color:white;">Our Products</h2>
 <p style="text-align:center;color:#ffd700;font-weight:bold;"> Click the category</p>
 
 <div class="cat-grid">
-<div class="cat-btn podis" onclick="showProducts('podis')">Podis</div>
-<div class="cat-btn pickles" onclick="showProducts('pickles')">Pickles</div>
-<div class="cat-btn choco" onclick="showProducts('choco')">Customized Chocolates</div>
-<div class="cat-btn poster" onclick="showProducts('poster')">Photo Poster</div>
+<div class="cat-btn podis" onclick="showProducts('podis','Podis','PDBG.png')">Podis</div>
+<div class="cat-btn pickles" onclick="showProducts('pickles','Pickles','PKBG.png')">Pickles</div>
+<div class="cat-btn choco" onclick="showProducts('choco','Customized Chocolates','BG.png')">Customized Chocolates</div>
+<div class="cat-btn poster" onclick="showProducts('poster','Photo Poster','BG.png')">Photo Poster</div>
 </div>
 
 </div>
 </div>
+
+<!-- CATEGORY TITLE -->
+<div id="catTitle" class="cat-title"></div>
 
 <!-- PRODUCTS -->
 <div class="products">
 <div id="productGrid" class="grid"></div>
 </div>
 
-<!-- ADS BOX -->
+<!-- ADS -->
 <div class="ads">Your Ads / Offers will show here</div>
 
 <!-- FOOTER -->
@@ -194,44 +203,54 @@ margin-bottom:10px;
 <p>© 2026 KLN PRODUCTS</p>
 </div>
 
+<!-- WHATSAPP FIXED -->
+<a class="whatsapp-float" href="https://wa.me/919492356154">WhatsApp</a>
+
 <script>
 const data={
 podis:[
-{name:"Karivepaku Podi 100g",img:"KPP.png",price:"&#8377;120"},
-{name:"Karivepaku Podi 250g",img:"KPP.png",price:"&#8377;250"},
-{name:"Karivepaku Podi 500g",img:"KPP.png",price:"&#8377;480"},
-{name:"Senagapodi 100g",img:"SPP.png",price:"&#8377;100"},
-{name:"Senagapodi 250g",img:"SPP.png",price:"&#8377;220"},
-{name:"Senagapodi 500g",img:"SPP.png",price:"&#8377;420"},
-{name:"Idly Karam 100g",img:"IK.png",price:"&#8377;110"},
-{name:"Idly Karam 250g",img:"IK.png",price:"&#8377;240"},
-{name:"Idly Karam 500g",img:"IK.png",price:"&#8377;450"}
+{name:"Karivepaku Podi 100g",img:"KPP.png",price:"120"},
+{name:"Karivepaku Podi 250g",img:"KPP.png",price:"250"},
+{name:"Karivepaku Podi 500g",img:"KPP.png",price:"480"},
+{name:"Senagapodi 100g",img:"SPP.png",price:"100"},
+{name:"Senagapodi 250g",img:"SPP.png",price:"220"},
+{name:"Senagapodi 500g",img:"SPP.png",price:"420"},
+{name:"Idly Karam 100g",img:"IK.png",price:"110"},
+{name:"Idly Karam 250g",img:"IK.png",price:"240"},
+{name:"Idly Karam 500g",img:"IK.png",price:"450"}
 ],
 pickles:[
-{name:"Boneless Chicken Pickle 280g",img:"BCP.png",price:"&#8377;300"},
-{name:"Boneless Chicken Pickle 500g",img:"BCP.png",price:"&#8377;489"},
-{name:"Boneless Chicken Pickle 1kg",img:"BCP.png",price:"&#8377;840"},
-{name:"Gongura Chicken Pickle 280g",img:"BCGP.png",price:"&#8377;390"},
-{name:"Gongura Chicken Pickle 500g",img:"BCGP.png",price:"&#8377;660"},
-{name:"Gongura Chicken Pickle 1kg",img:"BCGP.png",price:"&#8377;930"},
-{name:"Dondakaya Pickle 500g",img:"SNDTP.png",price:"&#8377;360"},
-{name:"Dondakaya Pickle 1kg",img:"SNDTP.png",price:"&#8377;630"}
+{name:"Boneless Chicken Pickle 280g",img:"BCP.png",price:"300"},
+{name:"Boneless Chicken Pickle 500g",img:"BCP.png",price:"489"},
+{name:"Boneless Chicken Pickle 1kg",img:"BCP.png",price:"840"},
+{name:"Gongura Chicken Pickle 280g",img:"BCGP.png",price:"390"},
+{name:"Gongura Chicken Pickle 500g",img:"BCGP.png",price:"660"},
+{name:"Gongura Chicken Pickle 1kg",img:"BCGP.png",price:"930"},
+{name:"Dondakaya Pickle 500g",img:"SNDTP.png",price:"360"},
+{name:"Dondakaya Pickle 1kg",img:"SNDTP.png",price:"630"}
 ],
 choco:[
-{name:"Customized Chocolates",img:"KLNC.png",price:"Starting &#8377;99"},
+{name:"Customized Chocolates",img:"KLNC.png",price:"Starting 99"},
 ],
 poster:[
-{name:"Photo Poster Design",img:"KLNB.png",price:"&#8377;99 - &#8377;399"}
+{name:"Photo Poster Design",img:"KLNB.png",price:"99 - 399"}
 ]
 };
 
-function showProducts(type){
+function showProducts(type,title,bg){
+document.getElementById("catTitle").innerText=title;
+
+/* CHANGE BACKGROUND IMAGE */
+document.getElementById("bgSection").style.background=
+"url('"+bg+"') center/cover no-repeat";
+
 let grid=document.getElementById("productGrid");
 grid.innerHTML="";
+
 data[type].forEach(item=>{
 grid.innerHTML+=`
 <div class="card">
-<img src="${item.img}">
+<img src="${item.img}" onerror="this.src='logo.png'">
 <h4>${item.name}</h4>
 <p class="price">${item.price}</p>
 <a class="btn" href="https://wa.me/919492356154?text=I want ${item.name}">Order</a>
