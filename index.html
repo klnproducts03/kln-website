@@ -8,37 +8,15 @@
 <style>
 body{margin:0;font-family:Arial, sans-serif;background:#f5f5f5;}
 
-/* HEADER */
-.header{
-background:#4a2600;
-color:white;
-text-align:center;
-padding:25px;
-}
+.header{background:#4a2600;color:white;text-align:center;padding:25px;}
 .header img{width:90px;border-radius:50%;}
 .header h1{margin:10px 0 5px;}
 .header p{margin:0;font-size:15px;}
 
-/* SCROLL */
-.scroll{
-background:#ffd700;
-color:#000;
-padding:8px;
-font-weight:bold;
-white-space:nowrap;
-overflow:hidden;
-}
-.scroll span{
-display:inline-block;
-padding-left:100%;
-animation:scroll 15s linear infinite;
-}
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
-}
+.scroll{background:#ffd700;color:#000;padding:8px;font-weight:bold;white-space:nowrap;overflow:hidden;}
+.scroll span{display:inline-block;padding-left:100%;animation:scroll 15s linear infinite;}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
 
-/* BACKGROUND SECTION */
 .section{
 background:url('BG.png') center/cover no-repeat;
 padding:20px;
@@ -47,13 +25,11 @@ transition:0.5s;
 }
 .section::before{
 content:"";
-position:absolute;
-top:0;left:0;right:0;bottom:0;
+position:absolute;top:0;left:0;right:0;bottom:0;
 background:rgba(0,0,0,0.55);
 }
 .section-content{position:relative;z-index:1;}
 
-/* CATEGORY BUTTONS */
 .cat-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -62,29 +38,18 @@ max-width:500px;
 margin:20px auto;
 }
 .cat-btn{
-padding:15px;
-border-radius:12px;
-color:white;
-font-weight:bold;
-text-align:center;
-cursor:pointer;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
+padding:15px;border-radius:12px;color:white;font-weight:bold;text-align:center;
+cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.4);
 }
 .podis{background:#ff9800;}
 .pickles{background:#4caf50;}
 .choco{background:#9c27b0;}
 .poster{background:#2196f3;}
 
-/* CATEGORY TITLE */
 .cat-title{
-text-align:center;
-font-size:22px;
-font-weight:bold;
-margin:10px 0;
-color:#4a2600;
+text-align:center;font-size:22px;font-weight:bold;margin:10px 0;color:#4a2600;
 }
 
-/* PRODUCTS */
 .products{padding:20px;}
 .grid{
 display:grid;
@@ -92,82 +57,43 @@ grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:15px;
 }
 .card{
-background:white;
-border-radius:10px;
-box-shadow:0 0 6px gray;
-padding:10px;
-text-align:center;
+background:white;border-radius:10px;box-shadow:0 0 6px gray;padding:10px;text-align:center;
 }
 .card img{
-width:100%;
-max-width:130px;
-height:130px;
-object-fit:cover;
-border-radius:8px;
+width:100%;max-width:130px;height:130px;object-fit:cover;border-radius:8px;
 }
 .price{color:green;font-weight:bold;margin:4px 0;}
 .btn{
-background:green;
-color:white;
-padding:6px 12px;
-border-radius:5px;
-text-decoration:none;
-display:inline-block;
-margin-top:5px;
-font-size:14px;
+background:green;color:white;padding:6px 12px;border-radius:5px;
+text-decoration:none;display:inline-block;margin-top:5px;font-size:14px;
 }
 
-/* ADS */
-.ads{
-background:#ddd;
-padding:20px;
-text-align:center;
-margin:20px;
-border-radius:10px;
-}
+.ads{background:#ddd;padding:20px;text-align:center;margin:20px;border-radius:10px;}
 
-/* FOOTER */
-.footer{
-background:#222;
-color:white;
-text-align:center;
-padding:20px;
-}
+.footer{background:#222;color:white;text-align:center;padding:20px;}
 .footer img{width:120px;margin-bottom:10px;}
 
-/* WHATSAPP FIXED */
 .whatsapp-float{
-position:fixed;
-bottom:15px;
-right:15px;
-background:#25D366;
-color:white;
-padding:12px 15px;
-border-radius:50px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
-z-index:999;
+position:fixed;bottom:15px;right:15px;background:#25D366;color:white;
+padding:12px 15px;border-radius:50px;font-weight:bold;text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);z-index:999;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
 <img src="logo.png">
 <h1>KLN PRODUCTS</h1>
 <p>Homemade Pickles, Podis & Customized Chocolates</p>
-<p>&#128222; <a href="tel:9492356154" style="color:white;text-decoration:none;">9492356154</a> | &#128247; @kln_products</p>
+<p> <a href="tel:9492356154" style="color:white;text-decoration:none;">9492356154</a> |  @kln_products</p>
 </div>
 
-<!-- SCROLL -->
 <div class="scroll">
 <span> Fresh Homemade Pickles & Podis | Free Delivery Above 500 | Order on WhatsApp </span>
 </div>
 
-<!-- CATEGORY SECTION -->
 <div id="bgSection" class="section">
 <div class="section-content">
 
@@ -184,18 +110,14 @@ z-index:999;
 </div>
 </div>
 
-<!-- CATEGORY TITLE -->
 <div id="catTitle" class="cat-title"></div>
 
-<!-- PRODUCTS -->
 <div class="products">
 <div id="productGrid" class="grid"></div>
 </div>
 
-<!-- ADS -->
 <div class="ads">Your Ads / Offers will show here</div>
 
-<!-- FOOTER -->
 <div class="footer">
 <img src="fssai.png">
 <p><b>FSSAI Licensed Food Business</b></p>
@@ -203,7 +125,6 @@ z-index:999;
 <p>© 2026 KLN PRODUCTS</p>
 </div>
 
-<!-- WHATSAPP FIXED -->
 <a class="whatsapp-float" href="https://wa.me/919492356154">WhatsApp</a>
 
 <script>
@@ -240,7 +161,7 @@ poster:[
 function showProducts(type,title,bg){
 document.getElementById("catTitle").innerText=title;
 
-/* CHANGE BACKGROUND IMAGE */
+/* CHANGE BACKGROUND */
 document.getElementById("bgSection").style.background=
 "url('"+bg+"') center/cover no-repeat";
 
