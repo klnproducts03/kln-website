@@ -54,10 +54,7 @@ position:absolute;
 top:0;left:0;right:0;bottom:0;
 background:rgba(0,0,0,0.6);
 }
-.section-content{
-position:relative;
-z-index:1;
-}
+.section-content{position:relative;z-index:1;}
 
 /* CATEGORY BUTTONS */
 .cat-grid{
@@ -137,12 +134,9 @@ color:white;
 text-align:center;
 padding:20px;
 }
-.footer img{
-width:120px;
-margin-bottom:10px;
-}
+.footer img{width:120px;margin-bottom:10px;}
 
-/* WHATSAPP FIXED BUTTON */
+/* WHATSAPP BUTTON */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -166,12 +160,12 @@ z-index:999;
 <img src="logo.png">
 <h1>KLN PRODUCTS</h1>
 <p>Homemade Pickles, Podis & Customized Chocolates</p>
-<p> 9492356154 |  @kln_products</p>
+<p>Phone: <a href="tel:9492356154" style="color:white;text-decoration:none;">9492356154</a> | Insta: @kln_products</p>
 </div>
 
 <!-- SCROLL -->
 <div class="scroll">
-<span> Fresh Homemade Pickles & Podis | Customized photos &Chocolets| Order on WhatsApp </span>
+<span>Fresh Homemade Pickles & Podis | Free Delivery Above Rs.500 | Order on WhatsApp</span>
 </div>
 
 <!-- CATEGORY SECTION -->
@@ -179,7 +173,7 @@ z-index:999;
 <div class="section-content">
 
 <h2 style="text-align:center;color:white;">Our Products</h2>
-<p style="text-align:center;color:#ffd700;font-weight:bold;">Click the category</p>
+<p style="text-align:center;color:#ffd700;font-weight:bold;">Click the category</p>
 
 <div class="cat-grid">
 <div class="cat-btn podis" onclick="showProducts('podis')">Podis</div>
@@ -207,37 +201,37 @@ z-index:999;
 <p>© 2026 KLN PRODUCTS</p>
 </div>
 
-<!-- WHATSAPP BUTTON -->
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/919492356154">WhatsApp</a>
 
 <script>
 const data={
 podis:[
-{name:"Karivepaku Podi 100g",img:"KPP.png",price:"120"},
-{name:"Karivepaku Podi 250g",img:"KPP.png",price:"250"},
-{name:"Karivepaku Podi 500g",img:"KPP.png",price:"480"},
-{name:"Senagapodi 100g",img:"SPP.png",price:"100"},
-{name:"Senagapodi 250g",img:"SPP.png",price:"220"},
-{name:"Senagapodi 500g",img:"SPP.png",price:"420"},
-{name:"Idly Karam 100g",img:"IK.png",price:"110"},
-{name:"Idly Karam 250g",img:"IK.png",price:"240"},
-{name:"Idly Karam 500g",img:"IK.png",price:"450"}
+{name:"Karivepaku Podi 100g",img:"KPP.png",price:"Rs.120"},
+{name:"Karivepaku Podi 250g",img:"KPP.png",price:"Rs.250"},
+{name:"Karivepaku Podi 500g",img:"KPP.png",price:"Rs.480"},
+{name:"Senagapodi 100g",img:"SPP.png",price:"Rs.100"},
+{name:"Senagapodi 250g",img:"SPP.png",price:"Rs.220"},
+{name:"Senagapodi 500g",img:"SPP.png",price:"Rs.420"},
+{name:"Idly Karam 100g",img:"IK.png",price:"Rs.110"},
+{name:"Idly Karam 250g",img:"IK.png",price:"Rs.240"},
+{name:"Idly Karam 500g",img:"IK.png",price:"Rs.450"}
 ],
 pickles:[
-{name:"Boneless Chicken Pickle 280g",img:"BCP.png",price:"300"},
-{name:"Boneless Chicken Pickle 500g",img:"BCP.png",price:"489"},
-{name:"Boneless Chicken Pickle 1kg",img:"BCP.png",price:"840"},
-{name:"Gongura Chicken Pickle 280g",img:"BCGP.png",price:"390"},
-{name:"Gongura Chicken Pickle 500g",img:"BCGP.png",price:"660"},
-{name:"Gongura Chicken Pickle 1kg",img:"BCGP.png",price:"930"},
-{name:"Dondakaya Pickle 500g",img:"SNDTP.png",price:"360"},
-{name:"Dondakaya Pickle 1kg",img:"SNDTP.png",price:"630"}
+{name:"Boneless Chicken Pickle 280g",img:"BCP.png",price:"Rs.300"},
+{name:"Boneless Chicken Pickle 500g",img:"BCP.png",price:"Rs.489"},
+{name:"Boneless Chicken Pickle 1kg",img:"BCP.png",price:"Rs.840"},
+{name:"Gongura Chicken Pickle 280g",img:"BCGP.png",price:"Rs.390"},
+{name:"Gongura Chicken Pickle 500g",img:"BCGP.png",price:"Rs.660"},
+{name:"Gongura Chicken Pickle 1kg",img:"BCGP.png",price:"Rs.930"},
+{name:"Dondakaya Pickle 500g",img:"SNDTP.png",price:"Rs.360"},
+{name:"Dondakaya Pickle 1kg",img:"SNDTP.png",price:"Rs.630"}
 ],
 choco:[
-{name:"Customized Chocolates",img:"KLNC.png",price:"Starting 99"}
+{name:"Customized Chocolates",img:"KLNC.png",price:"Starting Rs.99"}
 ],
 poster:[
-{name:"Photo Poster Design",img:"KLNB.png",price:"99 - 399"}
+{name:"Photo Poster Design",img:"KLNB.png",price:"Rs.99 - Rs.399"}
 ]
 };
 
