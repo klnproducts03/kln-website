@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +12,7 @@
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 background:#f5f5f5;
 }
 
@@ -35,6 +37,11 @@ margin:10px 0 5px;
 .header p{
 margin:5px 0;
 font-size:15px;
+}
+
+.header a{
+color:white;
+text-decoration:none;
 }
 
 
@@ -68,7 +75,7 @@ transform:translateX(-100%);
 }
 
 
-/* CATEGORY BG */
+/* CATEGORY */
 
 .section{
 background:url('BG.png') center/cover no-repeat;
@@ -133,12 +140,16 @@ background:#e91e63;
 background:#9c27b0;
 }
 
-.poster{
-background:#2196f3;
+.hairclips{
+background:#ff4081;
+}
+
+.jewellery{
+background:#b8860b;
 }
 
 
-/* PRODUCT SECTION */
+/* PRODUCTS */
 
 .products{
 padding:20px;
@@ -172,6 +183,7 @@ border-radius:8px;
 
 .card h4{
 margin:10px 0 5px;
+font-size:15px;
 }
 
 .price{
@@ -192,7 +204,7 @@ font-size:14px;
 }
 
 
-/* COMBO OFFER ADS */
+/* COMBO OFFER */
 
 .ads{
 margin:20px;
@@ -270,7 +282,7 @@ margin-bottom:10px;
 }
 
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -284,6 +296,45 @@ font-weight:bold;
 text-decoration:none;
 box-shadow:0 4px 10px rgba(0,0,0,0.4);
 z-index:999;
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+.cat-grid{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.cat-btn{
+padding:13px 5px;
+font-size:14px;
+}
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.card{
+padding:8px;
+}
+
+.card img{
+height:140px;
+}
+
+.card h4{
+font-size:14px;
+}
+
+.btn{
+font-size:13px;
+padding:8px 10px;
+}
+
 }
 
 </style>
@@ -302,20 +353,22 @@ z-index:999;
 
 <h1>KLN PRODUCTS</h1>
 
-<p>Homemade Pickles, Podis & Customized Chocolates</p>
+<p>
+Homemade Pickles, Podis, Customized Chocolates,
+Hair Clips & Jewellery
+</p>
 
 <p>
 
 Phone:
 
-<a href="tel:9492356154"
-style="color:white;text-decoration:none;">
-
+<a href="tel:9492356154">
 9492356154
-
 </a>
 
-| Insta: @kln_products
+&nbsp; | &nbsp;
+
+Insta: @kln_products
 
 </p>
 
@@ -331,6 +384,7 @@ style="color:white;text-decoration:none;">
 
 Fresh Homemade Pickles & Podis |
 Special Combo Packs |
+Hair Clips & Fashion Jewellery |
 Free Delivery Above Rs.500 |
 Order on WhatsApp
 
@@ -362,42 +416,62 @@ Click the category
 <div class="cat-grid">
 
 
+<!-- PODIS -->
+
 <div class="cat-btn podis"
 onclick="showProducts('podis')">
 
-Podis
+ Podis
 
 </div>
 
+
+<!-- PICKLES -->
 
 <div class="cat-btn pickles"
 onclick="showProducts('pickles')">
 
-Pickles
+ Pickles
 
 </div>
 
+
+<!-- COMBO -->
 
 <div class="cat-btn combo"
 onclick="showProducts('combo')">
 
- Combo Pack
+ Combo Pack
 
 </div>
 
+
+<!-- CHOCOLATES -->
 
 <div class="cat-btn choco"
 onclick="showProducts('choco')">
 
-Customized Chocolates
+ Customized Chocolates
 
 </div>
 
 
-<div class="cat-btn poster"
-onclick="showProducts('poster')">
+<!-- HAIR CLIPS -->
 
-Photo Poster
+<div class="cat-btn hairclips"
+onclick="showProducts('hairclips')">
+
+ Hair Clips
+
+</div>
+
+
+<!-- JEWELLERY -->
+
+<div class="cat-btn jewellery"
+onclick="showProducts('jewellery')">
+
+ Jewellery
 
 </div>
 
@@ -422,15 +496,22 @@ Photo Poster
 
 
 
-<!-- BLINKING COMBO OFFER ADS -->
+<!-- MAIN COMBO OFFER -->
 
 <div class="ads">
 
-<img src="COMBO.png" alt="KLN Authentic Andhra Combo Pack">
+<img
+src="COMBO.png"
+alt="KLN Authentic Andhra Combo Pack"
+>
 
-<h2> Authentic Andhra Combo Pack </h2>
+<h2>
+Authentic Andhra Combo Pack
+</h2>
 
-<p>Special KLN PRODUCTS Combo Offer</p>
+<p>
+Special KLN PRODUCTS Combo Offer
+</p>
 
 <div class="ads-price">
 
@@ -438,9 +519,11 @@ ONLY Rs.540
 
 </div>
 
-<a class="ads-btn"
+<a
+class="ads-btn"
 href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%20Authentic%20Andhra%20Combo%20Pack%20Rs.540"
-target="_blank">
+target="_blank"
+>
 
  Order Combo Now
 
@@ -454,24 +537,23 @@ target="_blank">
 
 <div class="footer">
 
-<img src="fssai.png" alt="FSSAI">
+<img
+src="fssai.png"
+alt="FSSAI"
+>
 
 <p>
-
-<b>FSSAI Licensed Food Business</b>
-
+<b>
+FSSAI Licensed Food Business
+</b>
 </p>
 
 <p>
-
 License No: 20125182000688
-
 </p>
 
 <p>
-
 © 2026 KLN PRODUCTS
-
 </p>
 
 </div>
@@ -480,11 +562,13 @@ License No: 20125182000688
 
 <!-- WHATSAPP -->
 
-<a class="whatsapp"
+<a
+class="whatsapp"
 href="https://wa.me/919492356154"
-target="_blank">
+target="_blank"
+>
 
-WhatsApp
+ WhatsApp
 
 </a>
 
@@ -495,6 +579,8 @@ WhatsApp
 
 const data={
 
+
+/* ================= PODIS ================= */
 
 podis:[
 
@@ -555,6 +641,8 @@ price:"Rs.450"
 ],
 
 
+
+/* ================= PICKLES ================= */
 
 pickles:[
 
@@ -628,17 +716,27 @@ price:"Rs.630"
 
 
 
+/* ================= COMBO ================= */
+
 combo:[
 
 {
 name:"Authentic Andhra Combo Pack",
 img:"COMBO.png",
-price:"Special Combo Offer Rs.540"
+price:"Rs.540"
+},
+
+{
+name:"Gongura Chicken Pickle & Gongura Royyala Pickle Combo",
+img:"GONGURACOMBO.png",
+price:"Rs.685"
 }
 
 ],
 
 
+
+/* ================= CHOCOLATES ================= */
 
 choco:[
 
@@ -652,12 +750,76 @@ price:"Starting Rs.99"
 
 
 
-poster:[
+/* ================= HAIR CLIPS ================= */
+
+hairclips:[
 
 {
-name:"Photo Poster Design",
-img:"KLNB.png",
-price:"Rs.99 - Rs.399"
+name:"6 Pcs Multicolor Hair Claw Clips",
+img:"hairclip6.png",
+price:"Rs.180"
+},
+
+{
+name:"Premium Black Hair Claw Clips",
+img:"hairclipblack.png",
+price:"Rs.129"
+},
+
+{
+name:"5 Pcs Matte Finish Hair Claw Clips",
+img:"hairclipmatte.png",
+price:"Rs.148"
+},
+
+{
+name:"6 Pcs Flower Hair Claw Clips",
+img:"hairclipflower.png",
+price:"Rs.149"
+},
+
+{
+name:"5 Pcs Bow Shape Hair Claw Clips",
+img:"hairclipbow.png",
+price:"Rs.145"
+}
+
+],
+
+
+
+/* ================= JEWELLERY ================= */
+
+jewellery:[
+
+{
+name:"Women's Gold Plated Mangalsutra",
+img:"mangalsutra.png",
+price:"Rs.230"
+},
+
+{
+name:"Gold Plated Designer Bangles with Red & Green Stone Work",
+img:"banglesdesigner.png",
+price:"Rs.392"
+},
+
+{
+name:"Gold Plated Red & Green Stone Bangles",
+img:"banglesredgreen.png",
+price:"Rs.230"
+},
+
+{
+name:"Stylish Oxidised Silver Earrings",
+img:"oxidisedeearrings.png",
+price:"Rs.114"
+},
+
+{
+name:"Butterfly Pendant Necklace & Earrings Set",
+img:"butterflyset.png",
+price:"Rs.87"
 }
 
 ]
@@ -666,12 +828,16 @@ price:"Rs.99 - Rs.399"
 
 
 
+/* ================= SHOW PRODUCTS ================= */
+
 function showProducts(type){
 
 let grid=document.getElementById("productGrid");
 
 let section=document.getElementById("productSection");
 
+
+/* BACKGROUND */
 
 if(type==="podis"){
 
@@ -694,6 +860,20 @@ section.style.background=
 
 }
 
+else if(type==="hairclips"){
+
+section.style.background=
+"linear-gradient(135deg,#ff80ab,#fce4ec)";
+
+}
+
+else if(type==="jewellery"){
+
+section.style.background=
+"linear-gradient(135deg,#fff8dc,#d4af37)";
+
+}
+
 else{
 
 section.style.background="#f5f5f5";
@@ -704,12 +884,20 @@ section.style.background="#f5f5f5";
 grid.innerHTML="";
 
 
+/* PRODUCT CARDS */
+
 data[type].forEach(item=>{
 
 
 let message=
+
 encodeURIComponent(
-"Hi KLN PRODUCTS, I want to order "+item.name
+
+"Hi KLN PRODUCTS, I want to order " +
+item.name +
+" - " +
+item.price
+
 );
 
 
@@ -717,19 +905,26 @@ grid.innerHTML+=`
 
 <div class="card">
 
-<img src="${item.img}" alt="${item.name}">
+<img
+src="${item.img}"
+alt="${item.name}"
+>
 
-<h4>${item.name}</h4>
+<h4>
+${item.name}
+</h4>
 
-<p class="price">${item.price}</p>
+<p class="price">
+${item.price}
+</p>
 
-<a class="btn"
-
+<a
+class="btn"
 href="https://wa.me/919492356154?text=${message}"
+target="_blank"
+>
 
-target="_blank">
-
-Order Now
+ Order Now
 
 </a>
 
@@ -740,6 +935,8 @@ Order Now
 });
 
 
+/* SCROLL */
+
 section.scrollIntoView({
 
 behavior:"smooth"
@@ -747,7 +944,6 @@ behavior:"smooth"
 });
 
 }
-
 
 </script>
 
