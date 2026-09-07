@@ -16,7 +16,7 @@ font-family:Arial,sans-serif;
 background:#f5f5f5;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .header{
 background:#4a2600;
@@ -45,7 +45,7 @@ text-decoration:none;
 }
 
 
-/* SCROLL */
+/* ================= SCROLLING LINE ================= */
 
 .scroll{
 background:#ffd700;
@@ -75,81 +75,177 @@ transform:translateX(-100%);
 }
 
 
-/* CATEGORY */
+/* ================= EXISTING COMBO AD ================= */
 
-.section{
-background:url('BG.png') center/cover no-repeat;
+.ads{
+margin:20px;
+padding:15px;
+border-radius:15px;
+text-align:center;
+background:linear-gradient(135deg,#ff9800,#e91e63);
+color:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+
+.ads img{
+width:100%;
+max-width:900px;
+height:auto;
+max-height:420px;
+object-fit:contain;
+display:block;
+margin:auto;
+border-radius:12px;
+}
+
+.ads h2{
+margin:12px 0 5px;
+}
+
+.ads p{
+margin:5px;
+}
+
+.ads-price{
+font-size:23px;
+font-weight:bold;
+color:#ffd700;
+margin:8px;
+}
+
+.ads-btn{
+background:#25D366;
+color:white;
+padding:11px 22px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+margin-top:8px;
+}
+
+
+/* ================= OUR PRODUCTS ================= */
+
+.categories{
 padding:20px;
-position:relative;
+background:#f5f5f5;
 }
 
-.section::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-right:0;
-bottom:0;
-background:rgba(0,0,0,0.6);
+.categories h2{
+text-align:center;
+color:#4a2600;
+margin:5px 0 8px;
 }
 
-.section-content{
-position:relative;
-z-index:1;
+.categories-sub{
+text-align:center;
+color:#777;
+font-weight:bold;
+margin-bottom:20px;
 }
 
 
-/* CATEGORY BUTTONS */
+/* CATEGORY GRID */
 
-.cat-grid{
+.category-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:15px;
-max-width:500px;
-margin:20px auto;
+gap:18px;
+max-width:800px;
+margin:auto;
 }
 
-.cat-btn{
-padding:15px;
-border-radius:12px;
-color:white;
-font-weight:bold;
+.category-card{
+background:white;
+border-radius:14px;
+padding:10px;
 text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
 cursor:pointer;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
 transition:0.3s;
 }
 
-.cat-btn:hover{
-transform:scale(1.05);
+.category-card:hover{
+transform:scale(1.04);
 }
 
-.podis{
-background:#ff9800;
+.category-card img{
+width:100%;
+height:170px;
+object-fit:cover;
+border-radius:10px;
+display:block;
 }
 
-.pickles{
-background:#4caf50;
-}
-
-.combo{
-background:#e91e63;
-}
-
-.choco{
-background:#9c27b0;
-}
-
-.hairclips{
-background:#ff4081;
-}
-
-.jewellery{
-background:#b8860b;
+.category-card h3{
+margin:10px 3px 5px;
+color:#4a2600;
+font-size:16px;
 }
 
 
-/* PRODUCTS */
+/* ================= BEST SELLERS ================= */
+
+.best-sellers{
+padding:20px;
+background:#fff8e1;
+}
+
+.best-sellers h2{
+text-align:center;
+color:#4a2600;
+margin:5px 0 20px;
+}
+
+.best-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:15px;
+max-width:1000px;
+margin:auto;
+}
+
+.best-card{
+background:white;
+border-radius:12px;
+padding:10px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,0.25);
+}
+
+.best-card img{
+width:100%;
+height:170px;
+object-fit:cover;
+border-radius:9px;
+}
+
+.best-card h4{
+margin:10px 0 5px;
+font-size:15px;
+}
+
+.best-price{
+color:green;
+font-weight:bold;
+font-size:17px;
+margin:5px;
+}
+
+.best-btn{
+background:#25D366;
+color:white;
+padding:9px 16px;
+border-radius:22px;
+text-decoration:none;
+display:inline-block;
+font-weight:bold;
+margin-top:5px;
+}
+
+
+/* ================= PRODUCT SECTION ================= */
 
 .products{
 padding:20px;
@@ -204,70 +300,7 @@ font-size:14px;
 }
 
 
-/* COMBO OFFER */
-
-.ads{
-margin:20px;
-padding:20px;
-border-radius:15px;
-text-align:center;
-background:linear-gradient(135deg,#ff9800,#e91e63);
-color:white;
-box-shadow:0 5px 15px rgba(0,0,0,0.4);
-animation:offerBlink 1.3s infinite;
-}
-
-@keyframes offerBlink{
-
-0%{
-opacity:1;
-transform:scale(1);
-}
-
-50%{
-opacity:0.55;
-transform:scale(1.02);
-}
-
-100%{
-opacity:1;
-transform:scale(1);
-}
-
-}
-
-.ads img{
-width:160px;
-height:160px;
-object-fit:cover;
-border-radius:12px;
-border:3px solid white;
-}
-
-.ads h2{
-margin:10px 0 5px;
-}
-
-.ads-price{
-font-size:23px;
-font-weight:bold;
-color:#ffd700;
-margin:8px;
-}
-
-.ads-btn{
-background:#25D366;
-color:white;
-padding:11px 22px;
-border-radius:25px;
-text-decoration:none;
-font-weight:bold;
-display:inline-block;
-margin-top:8px;
-}
-
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 .footer{
 background:#222;
@@ -282,7 +315,7 @@ margin-bottom:10px;
 }
 
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 
 .whatsapp{
 position:fixed;
@@ -299,40 +332,56 @@ z-index:999;
 }
 
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:500px){
 
-.cat-grid{
+.category-grid{
 grid-template-columns:repeat(2,1fr);
 gap:10px;
 }
 
-.cat-btn{
-padding:13px 5px;
-font-size:14px;
+.category-card{
+padding:7px;
 }
 
-.grid{
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
-
-.card{
-padding:8px;
-}
-
-.card img{
+.category-card img{
 height:140px;
 }
 
-.card h4{
+.category-card h3{
 font-size:14px;
 }
 
-.btn{
+.best-grid{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.best-card{
+padding:8px;
+}
+
+.best-card img{
+height:140px;
+}
+
+.best-card h4{
+font-size:13px;
+}
+
+.best-btn{
 font-size:13px;
 padding:8px 10px;
+}
+
+.ads{
+margin:12px;
+padding:10px;
+}
+
+.ads img{
+max-height:none;
 }
 
 }
@@ -345,7 +394,7 @@ padding:8px 10px;
 <body>
 
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <div class="header">
 
@@ -376,7 +425,7 @@ Insta: @kln_products
 
 
 
-<!-- SCROLL -->
+<!-- ================= SCROLLING LINE ================= -->
 
 <div class="scroll">
 
@@ -394,115 +443,13 @@ Order on WhatsApp
 
 
 
-<!-- CATEGORY SECTION -->
-
-<div class="section">
-
-<div class="section-content">
-
-<h2 style="text-align:center;color:white;">
-
-Our Products
-
-</h2>
-
-<p style="text-align:center;color:#ffd700;font-weight:bold;">
-
-Click the category
-
-</p>
-
-
-<div class="cat-grid">
-
-
-<!-- PODIS -->
-
-<div class="cat-btn podis"
-onclick="showProducts('podis')">
-
- Podis
-
-</div>
-
-
-<!-- PICKLES -->
-
-<div class="cat-btn pickles"
-onclick="showProducts('pickles')">
-
- Pickles
-
-</div>
-
-
-<!-- COMBO -->
-
-<div class="cat-btn combo"
-onclick="showProducts('combo')">
-
- Combo Pack
-
-</div>
-
-
-<!-- CHOCOLATES -->
-
-<div class="cat-btn choco"
-onclick="showProducts('choco')">
-
- Customized Chocolates
-
-</div>
-
-
-<!-- HAIR CLIPS -->
-
-<div class="cat-btn hairclips"
-onclick="showProducts('hairclips')">
-
- Hair Clips
-
-</div>
-
-
-<!-- JEWELLERY -->
-
-<div class="cat-btn jewellery"
-onclick="showProducts('jewellery')">
-
- Jewellery
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- PRODUCTS -->
-
-<div id="productSection" class="products">
-
-<div id="productGrid" class="grid">
-
-</div>
-
-</div>
-
-
-
-<!-- MAIN COMBO OFFER -->
+<!-- ================= EXISTING COMBO ADVERTISEMENT ================= -->
 
 <div class="ads">
 
 <img
-src="COMBO.png"
-alt="KLN Authentic Andhra Combo Pack"
+src="ADVERTISEMENT.png"
+alt="KLN PRODUCTS Special Offer"
 >
 
 <h2>
@@ -514,9 +461,7 @@ Special KLN PRODUCTS Combo Offer
 </p>
 
 <div class="ads-price">
-
 ONLY Rs.540
-
 </div>
 
 <a
@@ -533,7 +478,298 @@ target="_blank"
 
 
 
-<!-- FOOTER -->
+<!-- ================= OUR PRODUCTS ================= -->
+
+<div class="categories">
+
+<h2>
+OUR PRODUCTS
+</h2>
+
+<p class="categories-sub">
+Choose a Category
+</p>
+
+
+<div class="category-grid">
+
+
+<!-- PODIS -->
+
+<div
+class="category-card"
+onclick="showProducts('podis')"
+>
+
+<img
+src="podis.png"
+alt="Podis"
+>
+
+<h3>
+ Podis
+</h3>
+
+</div>
+
+
+<!-- PICKLES -->
+
+<div
+class="category-card"
+onclick="showProducts('pickles')"
+>
+
+<img
+src="pickles.png"
+alt="Pickles"
+>
+
+<h3>
+ Pickles
+</h3>
+
+</div>
+
+
+<!-- COMBO -->
+
+<div
+class="category-card"
+onclick="showProducts('combo')"
+>
+
+<img
+src="combo.png"
+alt="Combo Pack"
+>
+
+<h3>
+ Combo Pack
+</h3>
+
+</div>
+
+
+<!-- CHOCOLATES -->
+
+<div
+class="category-card"
+onclick="showProducts('choco')"
+>
+
+<img
+src="chocolates.png"
+alt="Customized Chocolates"
+>
+
+<h3>
+ Customized Chocolates
+</h3>
+
+</div>
+
+
+<!-- HAIR CLIPS -->
+
+<div
+class="category-card"
+onclick="showProducts('hairclips')"
+>
+
+<img
+src="hairclips.png"
+alt="Hair Clips"
+>
+
+<h3>
+ Hair Clips
+</h3>
+
+</div>
+
+
+<!-- JEWELLERY -->
+
+<div
+class="category-card"
+onclick="showProducts('jewellery')"
+>
+
+<img
+src="jewellery.png"
+alt="Jewellery"
+>
+
+<h3>
+ Jewellery
+</h3>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- ================= BEST SELLERS ================= -->
+
+<div class="best-sellers">
+
+<h2>
+ BEST SELLERS
+</h2>
+
+
+<div class="best-grid">
+
+
+<!-- BEST SELLER 1 -->
+
+<div class="best-card">
+
+<img
+src="COMBO.png"
+alt="Authentic Andhra Combo Pack"
+>
+
+<h4>
+Authentic Andhra Combo Pack
+</h4>
+
+<p class="best-price">
+Rs.540
+</p>
+
+<a
+class="best-btn"
+href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%20Authentic%20Andhra%20Combo%20Pack%20Rs.540"
+target="_blank"
+>
+
+ Order Now
+
+</a>
+
+</div>
+
+
+<!-- BEST SELLER 2 -->
+
+<div class="best-card">
+
+<img
+src="KPP.png"
+alt="Karivepaku Podi"
+>
+
+<h4>
+Karivepaku Podi 250g
+</h4>
+
+<p class="best-price">
+Rs.250
+</p>
+
+<a
+class="best-btn"
+href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%20Karivepaku%20Podi%20250g%20Rs.250"
+target="_blank"
+>
+
+ Order Now
+
+</a>
+
+</div>
+
+
+<!-- BEST SELLER 3 -->
+
+<div class="best-card">
+
+<img
+src="hairclip6.png"
+alt="Hair Clips"
+>
+
+<h4>
+6 Pcs Multicolor Hair Claw Clips
+</h4>
+
+<p class="best-price">
+Rs.180
+</p>
+
+<a
+class="best-btn"
+href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%206%20Pcs%20Multicolor%20Hair%20Claw%20Clips%20Rs.180"
+target="_blank"
+>
+
+ Order Now
+
+</a>
+
+</div>
+
+
+<!-- BEST SELLER 4 -->
+
+<div class="best-card">
+
+<img
+src="mangalsutra.png"
+alt="Gold Plated Mangalsutra"
+>
+
+<h4>
+Women's Gold Plated Mangalsutra
+</h4>
+
+<p class="best-price">
+Rs.230
+</p>
+
+<a
+class="best-btn"
+href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%20Women's%20Gold%20Plated%20Mangalsutra%20Rs.230"
+target="_blank"
+>
+
+ Order Now
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- ================= PRODUCT SECTION ================= -->
+
+<div
+id="productSection"
+class="products"
+>
+
+<div
+id="productGrid"
+class="grid"
+>
+</div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
 
 <div class="footer">
 
@@ -560,7 +796,7 @@ License No: 20125182000688
 
 
 
-<!-- WHATSAPP -->
+<!-- ================= WHATSAPP ================= -->
 
 <a
 class="whatsapp"
@@ -577,10 +813,12 @@ target="_blank"
 <script>
 
 
+/* ================= PRODUCT DATA ================= */
+
 const data={
 
 
-/* ================= PODIS ================= */
+/* PODIS */
 
 podis:[
 
@@ -642,7 +880,7 @@ price:"Rs.450"
 
 
 
-/* ================= PICKLES ================= */
+/* PICKLES */
 
 pickles:[
 
@@ -716,7 +954,7 @@ price:"Rs.630"
 
 
 
-/* ================= COMBO ================= */
+/* COMBO */
 
 combo:[
 
@@ -736,7 +974,7 @@ price:"Rs.685"
 
 
 
-/* ================= CHOCOLATES ================= */
+/* CHOCOLATES */
 
 choco:[
 
@@ -750,7 +988,7 @@ price:"Starting Rs.99"
 
 
 
-/* ================= HAIR CLIPS ================= */
+/* HAIR CLIPS */
 
 hairclips:[
 
@@ -788,7 +1026,7 @@ price:"Rs.145"
 
 
 
-/* ================= JEWELLERY ================= */
+/* JEWELLERY */
 
 jewellery:[
 
@@ -837,8 +1075,6 @@ let grid=document.getElementById("productGrid");
 let section=document.getElementById("productSection");
 
 
-/* BACKGROUND */
-
 if(type==="podis"){
 
 section.style.background=
@@ -883,8 +1119,6 @@ section.style.background="#f5f5f5";
 
 grid.innerHTML="";
 
-
-/* PRODUCT CARDS */
 
 data[type].forEach(item=>{
 
@@ -935,12 +1169,8 @@ target="_blank"
 });
 
 
-/* SCROLL */
-
 section.scrollIntoView({
-
 behavior:"smooth"
-
 });
 
 }
