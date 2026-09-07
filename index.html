@@ -1,1183 +1,860 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>KLN PRODUCTS</title>
 
 <style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f5f5f5;
+    font-family:Arial, sans-serif;
+    background:#fff8e7;
+    color:#333;
 }
 
-/* ================= HEADER ================= */
-
-.header{
-background:#4a2600;
-color:white;
-text-align:center;
-padding:25px;
+/* HEADER */
+header{
+    background:#ff9800;
+    color:white;
+    padding:15px 10px;
+    text-align:center;
 }
 
-.header img{
-width:90px;
-border-radius:50%;
+header img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    border-radius:50%;
 }
 
-.header h1{
-margin:10px 0 5px;
+header h1{
+    margin:5px 0;
+    font-size:28px;
 }
 
-.header p{
-margin:5px 0;
-font-size:15px;
+header p{
+    font-size:14px;
 }
 
-.header a{
-color:white;
-text-decoration:none;
+/* SCROLLING LINE */
+.marquee{
+    background:#8b0000;
+    color:white;
+    padding:9px 0;
+    overflow:hidden;
+    white-space:nowrap;
+    font-weight:bold;
 }
 
-
-/* ================= SCROLLING LINE ================= */
-
-.scroll{
-background:#ffd700;
-color:#000;
-padding:8px;
-font-weight:bold;
-white-space:nowrap;
-overflow:hidden;
+.marquee span{
+    display:inline-block;
+    padding-left:100%;
+    animation:scrollText 15s linear infinite;
 }
 
-.scroll span{
-display:inline-block;
-padding-left:100%;
-animation:scroll 15s linear infinite;
+@keyframes scrollText{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-100%);
+    }
 }
 
-@keyframes scroll{
-
-0%{
-transform:translateX(0);
-}
-
-100%{
-transform:translateX(-100%);
-}
-
-}
-
-
-/* ================= EXISTING COMBO AD ================= */
-
+/* ADVERTISEMENT */
 .ads{
-margin:20px;
-padding:15px;
-border-radius:15px;
-text-align:center;
-background:linear-gradient(135deg,#ff9800,#e91e63);
-color:white;
-box-shadow:0 5px 15px rgba(0,0,0,0.4);
+    width:95%;
+    max-width:1000px;
+    margin:20px auto;
+    padding:12px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    text-align:center;
 }
 
 .ads img{
-width:100%;
-max-width:900px;
-height:auto;
-max-height:420px;
-object-fit:contain;
-display:block;
-margin:auto;
-border-radius:12px;
+    width:100%;
+    max-width:900px;
+    height:auto;
+    max-height:420px;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+    border-radius:12px;
+
+    /* SOFT BLINK / PULSE */
+    animation:adPulse 2s ease-in-out infinite;
 }
 
-.ads h2{
-margin:12px 0 5px;
+@keyframes adPulse{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:0 0 0 rgba(255,215,0,0);
+    }
+
+    50%{
+        transform:scale(1.025);
+        box-shadow:0 0 18px rgba(255,215,0,0.8);
+    }
 }
 
-.ads p{
-margin:5px;
+/* SECTION */
+section{
+    width:95%;
+    max-width:1100px;
+    margin:25px auto;
 }
 
-.ads-price{
-font-size:23px;
-font-weight:bold;
-color:#ffd700;
-margin:8px;
+.section-title{
+    text-align:center;
+    font-size:25px;
+    color:#8b0000;
+    margin-bottom:18px;
+    font-weight:bold;
 }
 
-.ads-btn{
-background:#25D366;
-color:white;
-padding:11px 22px;
-border-radius:25px;
-text-decoration:none;
-font-weight:bold;
-display:inline-block;
-margin-top:8px;
-}
-
-
-/* ================= OUR PRODUCTS ================= */
-
+/* CATEGORIES */
 .categories{
-padding:20px;
-background:#f5f5f5;
-}
-
-.categories h2{
-text-align:center;
-color:#4a2600;
-margin:5px 0 8px;
-}
-
-.categories-sub{
-text-align:center;
-color:#777;
-font-weight:bold;
-margin-bottom:20px;
-}
-
-
-/* CATEGORY GRID */
-
-.category-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
-max-width:800px;
-margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
 }
 
 .category-card{
-background:white;
-border-radius:14px;
-padding:10px;
-text-align:center;
-box-shadow:0 3px 10px rgba(0,0,0,0.2);
-cursor:pointer;
-transition:0.3s;
+    background:white;
+    border-radius:15px;
+    padding:10px;
+    text-align:center;
+    cursor:pointer;
+    box-shadow:0 3px 10px rgba(0,0,0,0.12);
+    transition:0.3s;
 }
 
 .category-card:hover{
-transform:scale(1.04);
+    transform:translateY(-5px);
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
 }
 
 .category-card img{
-width:100%;
-height:170px;
-object-fit:cover;
-border-radius:10px;
-display:block;
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
 }
 
 .category-card h3{
-margin:10px 3px 5px;
-color:#4a2600;
-font-size:16px;
+    margin-top:8px;
+    color:#8b0000;
+    font-size:18px;
 }
 
-
-/* ================= BEST SELLERS ================= */
-
+/* BEST SELLERS */
 .best-sellers{
-padding:20px;
-background:#fff8e1;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
-.best-sellers h2{
-text-align:center;
-color:#4a2600;
-margin:5px 0 20px;
-}
-
-.best-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-gap:15px;
-max-width:1000px;
-margin:auto;
-}
-
-.best-card{
-background:white;
-border-radius:12px;
-padding:10px;
-text-align:center;
-box-shadow:0 3px 10px rgba(0,0,0,0.25);
-}
-
-.best-card img{
-width:100%;
-height:170px;
-object-fit:cover;
-border-radius:9px;
-}
-
-.best-card h4{
-margin:10px 0 5px;
-font-size:15px;
-}
-
-.best-price{
-color:green;
-font-weight:bold;
-font-size:17px;
-margin:5px;
-}
-
-.best-btn{
-background:#25D366;
-color:white;
-padding:9px 16px;
-border-radius:22px;
-text-decoration:none;
-display:inline-block;
-font-weight:bold;
-margin-top:5px;
-}
-
-
-/* ================= PRODUCT SECTION ================= */
-
+/* PRODUCTS */
 .products{
-padding:20px;
-min-height:300px;
-background:#f5f5f5;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:15px;
-max-width:1000px;
-margin:auto;
+.product-card{
+    background:white;
+    border-radius:15px;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,0.12);
+    transition:0.3s;
 }
 
-.card{
-background:white;
-border-radius:10px;
-box-shadow:0 0 6px gray;
-padding:10px;
-text-align:center;
+.product-card:hover{
+    transform:translateY(-4px);
 }
 
-.card img{
-width:100%;
-max-width:150px;
-height:150px;
-object-fit:cover;
-border-radius:8px;
+.product-card img{
+    width:100%;
+    height:210px;
+    object-fit:contain;
+    border-radius:12px;
 }
 
-.card h4{
-margin:10px 0 5px;
-font-size:15px;
+.product-card h3{
+    margin:10px 0 5px;
+    font-size:18px;
+    color:#8b0000;
 }
 
 .price{
-color:green;
-font-weight:bold;
-margin:4px 0;
+    font-size:18px;
+    font-weight:bold;
+    color:#e65100;
+    margin:8px 0;
 }
 
-.btn{
-background:green;
-color:white;
-padding:8px 14px;
-border-radius:5px;
-text-decoration:none;
-display:inline-block;
-margin-top:5px;
-font-size:14px;
+.order-btn{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:25px;
+    font-weight:bold;
+    margin-top:5px;
 }
 
-
-/* ================= FOOTER ================= */
-
-.footer{
-background:#222;
-color:white;
-text-align:center;
-padding:20px;
+.order-btn:hover{
+    background:#128C7E;
 }
 
-.footer img{
-width:120px;
-margin-bottom:10px;
+/* BACK BUTTON */
+.back-btn{
+    display:none;
+    background:#8b0000;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:25px;
+    cursor:pointer;
+    margin:0 auto 20px;
+    font-weight:bold;
 }
 
+/* FOOTER */
+footer{
+    margin-top:35px;
+    background:#4e2600;
+    color:white;
+    text-align:center;
+    padding:20px 10px;
+}
 
-/* ================= WHATSAPP ================= */
+footer img{
+    width:80px;
+    margin-bottom:8px;
+}
 
+footer p{
+    margin:5px 0;
+    font-size:13px;
+}
+
+/* WHATSAPP FLOATING BUTTON */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:15px;
-background:#25D366;
-color:white;
-padding:12px 18px;
-border-radius:30px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
-z-index:999;
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    z-index:999;
 }
 
+/* MOBILE */
+@media(max-width:768px){
 
-/* ================= MOBILE ================= */
+    header h1{
+        font-size:24px;
+    }
 
-@media(max-width:500px){
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-.category-grid{
-grid-template-columns:repeat(2,1fr);
-gap:10px;
+    .best-sellers{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-card img{
+        height:170px;
+    }
+
+    .category-card img{
+        height:120px;
+    }
 }
 
-.category-card{
-padding:7px;
-}
+@media(max-width:480px){
 
-.category-card img{
-height:140px;
-}
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
 
-.category-card h3{
-font-size:14px;
-}
+    .best-sellers{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
 
-.best-grid{
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
 
-.best-card{
-padding:8px;
-}
+    .product-card{
+        padding:8px;
+    }
 
-.best-card img{
-height:140px;
-}
+    .product-card img{
+        height:140px;
+    }
 
-.best-card h4{
-font-size:13px;
-}
+    .product-card h3{
+        font-size:15px;
+    }
 
-.best-btn{
-font-size:13px;
-padding:8px 10px;
-}
+    .price{
+        font-size:16px;
+    }
 
-.ads{
-margin:12px;
-padding:10px;
+    .order-btn{
+        padding:8px 12px;
+        font-size:13px;
+    }
 }
-
-.ads img{
-max-height:none;
-}
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
+<!-- HEADER -->
+<header>
+    <img src="logo.png" alt="KLN PRODUCTS Logo">
+    <h1>KLN PRODUCTS</h1>
+    <p>Homemade Pickles • Podis • Customized Chocolates</p>
+    <p> 9492356154 | Instagram: @kln_products</p>
+</header>
 
-<!-- ================= HEADER ================= -->
 
-<div class="header">
-
-<img src="logo.png" alt="KLN Products Logo">
-
-<h1>KLN PRODUCTS</h1>
-
-<p>
-Homemade Pickles, Podis, Customized Chocolates,
-Hair Clips & Jewellery
-</p>
-
-<p>
-
-Phone:
-
-<a href="tel:9492356154">
-9492356154
-</a>
-
-&nbsp; | &nbsp;
-
-Insta: @kln_products
-
-</p>
-
+<!-- SCROLLING LINE -->
+<div class="marquee">
+    <span>
+        Fresh Homemade Pickles & Podis |
+        Special Combo Packs |
+        Free Delivery Above 500 |
+        Order on WhatsApp
+    </span>
 </div>
 
 
-
-<!-- ================= SCROLLING LINE ================= -->
-
-<div class="scroll">
-
-<span>
-
-Fresh Homemade Pickles & Podis |
-Special Combo Packs |
-Hair Clips & Fashion Jewellery |
-Free Delivery Above Rs.500 |
-Order on WhatsApp
-
-</span>
-
-</div>
-
-
-
-<!-- ================= EXISTING COMBO ADVERTISEMENT ================= -->
-
+<!-- ADVERTISEMENT -->
 <div class="ads">
-
-<img
-src="ADVERTISEMENT.png"
-alt="KLN PRODUCTS Special Offer"
->
-
-<h2>
-Authentic Andhra Combo Pack
-</h2>
-
-<p>
-Special KLN PRODUCTS Combo Offer
-</p>
-
-<div class="ads-price">
-ONLY Rs.540
+    <img src="ADVERTISEMENT.png" alt="KLN Products Special Offer">
 </div>
 
-<a
-class="ads-btn"
-href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%20Authentic%20Andhra%20Combo%20Pack%20Rs.540"
-target="_blank"
->
 
- Order Combo Now
+<!-- OUR PRODUCTS -->
+<section id="categoriesSection">
 
+    <h2 class="section-title"> Our Products</h2>
+
+    <div class="categories">
+
+        <div class="category-card" onclick="showProducts('podis')">
+            <img src="podis.png" alt="Podis">
+            <h3>Podis</h3>
+        </div>
+
+        <div class="category-card" onclick="showProducts('pickles')">
+            <img src="pickles.png" alt="Pickles">
+            <h3>Pickles</h3>
+        </div>
+
+        <div class="category-card" onclick="showProducts('combo')">
+            <img src="combo.png" alt="Combo Packs">
+            <h3>Combo Packs</h3>
+        </div>
+
+        <div class="category-card" onclick="showProducts('chocolates')">
+            <img src="chocolates.png" alt="Chocolates">
+            <h3>Chocolates</h3>
+        </div>
+
+        <div class="category-card" onclick="showProducts('hairclips')">
+            <img src="hairclips.png" alt="Hair Clips">
+            <h3>Hair Clips</h3>
+        </div>
+
+        <div class="category-card" onclick="showProducts('jewellery')">
+            <img src="jewellery.png" alt="Jewellery">
+            <h3>Jewellery</h3>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- BEST SELLERS -->
+<section>
+
+    <h2 class="section-title"> Best Sellers</h2>
+
+    <div class="best-sellers">
+
+        <div class="product-card">
+            <img src="COMBO.png" alt="Authentic Andhra Combo Pack">
+            <h3>Authentic Andhra Combo Pack</h3>
+            <div class="price">540</div>
+            <a class="order-btn"
+               href="https://wa.me/919492356154?text=I%20want%20to%20order%20Authentic%20Andhra%20Combo%20Pack%20%E2%82%B9540"
+               target="_blank">
+                Order on WhatsApp
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="KPP.png" alt="Karivepaku Podi 250g">
+            <h3>Karivepaku Podi 250g</h3>
+            <div class="price">250</div>
+            <a class="order-btn"
+               href="https://wa.me/919492356154?text=I%20want%20to%20order%20Karivepaku%20Podi%20250g%20%E2%82%B9250"
+               target="_blank">
+                Order on WhatsApp
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="hairclip6.png" alt="6 Pcs Multicolor Hair Claw Clips">
+            <h3>6 Pcs Multicolor Hair Claw Clips</h3>
+            <div class="price">180</div>
+            <a class="order-btn"
+               href="https://wa.me/919492356154?text=I%20want%20to%20order%206%20Pcs%20Multicolor%20Hair%20Claw%20Clips%20%E2%82%B9180"
+               target="_blank">
+                Order on WhatsApp
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="mangalsutra.png" alt="Women's Gold Plated Mangalsutra">
+            <h3>Women's Gold Plated Mangalsutra</h3>
+            <div class="price">230</div>
+            <a class="order-btn"
+               href="https://wa.me/919492356154?text=I%20want%20to%20order%20Women%27s%20Gold%20Plated%20Mangalsutra%20%E2%82%B9230"
+               target="_blank">
+                Order on WhatsApp
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PRODUCTS -->
+<section id="productsSection" style="display:none;">
+
+    <h2 id="productTitle" class="section-title"></h2>
+
+    <button class="back-btn" id="backBtn" onclick="showCategories()">
+         Back to Categories
+    </button>
+
+    <div class="products" id="productsContainer"></div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <img src="fssai.png" alt="FSSAI">
+
+    <p>FSSAI License No: 20125182000688</p>
+
+    <p>© 2026 KLN PRODUCTS. All Rights Reserved.</p>
+
+    <p>Homemade with </p>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp"
+   href="https://wa.me/919492356154"
+   target="_blank"
+   aria-label="WhatsApp">
+    
 </a>
-
-</div>
-
-
-
-<!-- ================= OUR PRODUCTS ================= -->
-
-<div class="categories">
-
-<h2>
-OUR PRODUCTS
-</h2>
-
-<p class="categories-sub">
-Choose a Category
-</p>
-
-
-<div class="category-grid">
-
-
-<!-- PODIS -->
-
-<div
-class="category-card"
-onclick="showProducts('podis')"
->
-
-<img
-src="podis.png"
-alt="Podis"
->
-
-<h3>
- Podis
-</h3>
-
-</div>
-
-
-<!-- PICKLES -->
-
-<div
-class="category-card"
-onclick="showProducts('pickles')"
->
-
-<img
-src="pickles.png"
-alt="Pickles"
->
-
-<h3>
- Pickles
-</h3>
-
-</div>
-
-
-<!-- COMBO -->
-
-<div
-class="category-card"
-onclick="showProducts('combo')"
->
-
-<img
-src="combo.png"
-alt="Combo Pack"
->
-
-<h3>
- Combo Pack
-</h3>
-
-</div>
-
-
-<!-- CHOCOLATES -->
-
-<div
-class="category-card"
-onclick="showProducts('choco')"
->
-
-<img
-src="chocolates.png"
-alt="Customized Chocolates"
->
-
-<h3>
- Customized Chocolates
-</h3>
-
-</div>
-
-
-<!-- HAIR CLIPS -->
-
-<div
-class="category-card"
-onclick="showProducts('hairclips')"
->
-
-<img
-src="hairclips.png"
-alt="Hair Clips"
->
-
-<h3>
- Hair Clips
-</h3>
-
-</div>
-
-
-<!-- JEWELLERY -->
-
-<div
-class="category-card"
-onclick="showProducts('jewellery')"
->
-
-<img
-src="jewellery.png"
-alt="Jewellery"
->
-
-<h3>
- Jewellery
-</h3>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<!-- ================= BEST SELLERS ================= -->
-
-<div class="best-sellers">
-
-<h2>
- BEST SELLERS
-</h2>
-
-
-<div class="best-grid">
-
-
-<!-- BEST SELLER 1 -->
-
-<div class="best-card">
-
-<img
-src="COMBO.png"
-alt="Authentic Andhra Combo Pack"
->
-
-<h4>
-Authentic Andhra Combo Pack
-</h4>
-
-<p class="best-price">
-Rs.540
-</p>
-
-<a
-class="best-btn"
-href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%20Authentic%20Andhra%20Combo%20Pack%20Rs.540"
-target="_blank"
->
-
- Order Now
-
-</a>
-
-</div>
-
-
-<!-- BEST SELLER 2 -->
-
-<div class="best-card">
-
-<img
-src="KPP.png"
-alt="Karivepaku Podi"
->
-
-<h4>
-Karivepaku Podi 250g
-</h4>
-
-<p class="best-price">
-Rs.250
-</p>
-
-<a
-class="best-btn"
-href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%20Karivepaku%20Podi%20250g%20Rs.250"
-target="_blank"
->
-
- Order Now
-
-</a>
-
-</div>
-
-
-<!-- BEST SELLER 3 -->
-
-<div class="best-card">
-
-<img
-src="hairclip6.png"
-alt="Hair Clips"
->
-
-<h4>
-6 Pcs Multicolor Hair Claw Clips
-</h4>
-
-<p class="best-price">
-Rs.180
-</p>
-
-<a
-class="best-btn"
-href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%206%20Pcs%20Multicolor%20Hair%20Claw%20Clips%20Rs.180"
-target="_blank"
->
-
- Order Now
-
-</a>
-
-</div>
-
-
-<!-- BEST SELLER 4 -->
-
-<div class="best-card">
-
-<img
-src="mangalsutra.png"
-alt="Gold Plated Mangalsutra"
->
-
-<h4>
-Women's Gold Plated Mangalsutra
-</h4>
-
-<p class="best-price">
-Rs.230
-</p>
-
-<a
-class="best-btn"
-href="https://wa.me/919492356154?text=Hi%20KLN%20PRODUCTS,%20I%20want%20to%20order%20Women's%20Gold%20Plated%20Mangalsutra%20Rs.230"
-target="_blank"
->
-
- Order Now
-
-</a>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<!-- ================= PRODUCT SECTION ================= -->
-
-<div
-id="productSection"
-class="products"
->
-
-<div
-id="productGrid"
-class="grid"
->
-</div>
-
-</div>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-<div class="footer">
-
-<img
-src="fssai.png"
-alt="FSSAI"
->
-
-<p>
-<b>
-FSSAI Licensed Food Business
-</b>
-</p>
-
-<p>
-License No: 20125182000688
-</p>
-
-<p>
-© 2026 KLN PRODUCTS
-</p>
-
-</div>
-
-
-
-<!-- ================= WHATSAPP ================= -->
-
-<a
-class="whatsapp"
-href="https://wa.me/919492356154"
-target="_blank"
->
-
- WhatsApp
-
-</a>
-
 
 
 <script>
 
+const products = {
+
+    podis: [
+
+        {
+            name:"Karivepaku Podi 100g",
+            image:"KPP.png",
+            price:120
+        },
+
+        {
+            name:"Karivepaku Podi 250g",
+            image:"KPP.png",
+            price:250
+        },
+
+        {
+            name:"Karivepaku Podi 500g",
+            image:"KPP.png",
+            price:480
+        },
+
+        {
+            name:"Senagapodi 100g",
+            image:"SPP.png",
+            price:100
+        },
+
+        {
+            name:"Senagapodi 250g",
+            image:"SPP.png",
+            price:220
+        },
+
+        {
+            name:"Senagapodi 500g",
+            image:"SPP.png",
+            price:420
+        },
+
+        {
+            name:"Idly Karam 100g",
+            image:"IK.png",
+            price:110
+        },
+
+        {
+            name:"Idly Karam 250g",
+            image:"IK.png",
+            price:240
+        },
+
+        {
+            name:"Idly Karam 500g",
+            image:"IK.png",
+            price:450
+        }
+
+    ],
+
+
+    pickles: [
+
+        {
+            name:"Boneless Chicken Pickle 280g",
+            image:"BCP.png",
+            price:300
+        },
+
+        {
+            name:"Boneless Chicken Pickle 500g",
+            image:"BCP.png",
+            price:550
+        },
+
+        {
+            name:"Boneless Chicken Pickle 1kg",
+            image:"BCP.png",
+            price:1100
+        },
+
+        {
+            name:"Gongura Chicken Pickle 280g",
+            image:"BCGP.png",
+            price:390
+        },
+
+        {
+            name:"Gongura Chicken Pickle 500g",
+            image:"BCGP.png",
+            price:750
+        },
+
+        {
+            name:"Gongura Chicken Pickle 1kg",
+            image:"BCGP.png",
+            price:1300
+        },
+
+        {
+            name:"Royyala Pickle 280g",
+            image:"RP.png",
+            price:390
+        },
 
-/* ================= PRODUCT DATA ================= */
-
-const data={
-
-
-/* PODIS */
-
-podis:[
-
-{
-name:"Karivepaku Podi 100g",
-img:"KPP.png",
-price:"Rs.120"
-},
-
-{
-name:"Karivepaku Podi 250g",
-img:"KPP.png",
-price:"Rs.250"
-},
-
-{
-name:"Karivepaku Podi 500g",
-img:"KPP.png",
-price:"Rs.480"
-},
-
-{
-name:"Senagapodi 100g",
-img:"SPP.png",
-price:"Rs.100"
-},
-
-{
-name:"Senagapodi 250g",
-img:"SPP.png",
-price:"Rs.220"
-},
-
-{
-name:"Senagapodi 500g",
-img:"SPP.png",
-price:"Rs.420"
-},
-
-{
-name:"Idly Karam 100g",
-img:"IK.png",
-price:"Rs.110"
-},
-
-{
-name:"Idly Karam 250g",
-img:"IK.png",
-price:"Rs.240"
-},
-
-{
-name:"Idly Karam 500g",
-img:"IK.png",
-price:"Rs.450"
-}
-
-],
-
-
-
-/* PICKLES */
-
-pickles:[
-
-{
-name:"Boneless Chicken Pickle 280g",
-img:"BCP.png",
-price:"Rs.300"
-},
-
-{
-name:"Boneless Chicken Pickle 500g",
-img:"BCP.png",
-price:"Rs.550"
-},
-
-{
-name:"Boneless Chicken Pickle 1kg",
-img:"BCP.png",
-price:"Rs.1100"
-},
-
-{
-name:"Gongura Chicken Pickle 280g",
-img:"BCGP.png",
-price:"Rs.390"
-},
-
-{
-name:"Gongura Chicken Pickle 500g",
-img:"BCGP.png",
-price:"Rs.750"
-},
-
-{
-name:"Gongura Chicken Pickle 1kg",
-img:"BCGP.png",
-price:"Rs.1300"
-},
-
-{
-name:"Royyala Pickle 280g",
-img:"RP.png",
-price:"Rs.390"
-},
-
-{
-name:"Royyala Pickle 500g",
-img:"RP.png",
-price:"Rs.740"
-},
-
-{
-name:"Royyala Pickle 1kg",
-img:"RP.png",
-price:"Rs.1350"
-},
-
-{
-name:"Dondakaya Pickle 500g",
-img:"SNDTP.png",
-price:"Rs.360"
-},
-
-{
-name:"Dondakaya Pickle 1kg",
-img:"SNDTP.png",
-price:"Rs.630"
-}
-
-],
-
-
-
-/* COMBO */
-
-combo:[
-
-{
-name:"Authentic Andhra Combo Pack",
-img:"COMBO.png",
-price:"Rs.540"
-},
-
-{
-name:"Gongura Chicken Pickle & Gongura Royyala Pickle Combo",
-img:"GONGURACOMBO.png",
-price:"Rs.685"
-}
-
-],
-
-
-
-/* CHOCOLATES */
-
-choco:[
-
-{
-name:"Customized Chocolates",
-img:"KLNC.png",
-price:"Starting Rs.99"
-}
-
-],
-
-
-
-/* HAIR CLIPS */
-
-hairclips:[
-
-{
-name:"6 Pcs Multicolor Hair Claw Clips",
-img:"hairclip6.png",
-price:"Rs.180"
-},
-
-{
-name:"Premium Black Hair Claw Clips",
-img:"hairclipblack.png",
-price:"Rs.129"
-},
-
-{
-name:"5 Pcs Matte Finish Hair Claw Clips",
-img:"hairclipmatte.png",
-price:"Rs.148"
-},
-
-{
-name:"6 Pcs Flower Hair Claw Clips",
-img:"hairclipflower.png",
-price:"Rs.149"
-},
-
-{
-name:"5 Pcs Bow Shape Hair Claw Clips",
-img:"hairclipbow.png",
-price:"Rs.145"
-}
-
-],
-
-
-
-/* JEWELLERY */
-
-jewellery:[
-
-{
-name:"Women's Gold Plated Mangalsutra",
-img:"mangalsutra.png",
-price:"Rs.230"
-},
-
-{
-name:"Gold Plated Designer Bangles with Red & Green Stone Work",
-img:"banglesdesigner.png",
-price:"Rs.392"
-},
-
-{
-name:"Gold Plated Red & Green Stone Bangles",
-img:"banglesredgreen.png",
-price:"Rs.230"
-},
-
-{
-name:"Stylish Oxidised Silver Earrings",
-img:"oxidisedeearrings.png",
-price:"Rs.114"
-},
-
-{
-name:"Butterfly Pendant Necklace & Earrings Set",
-img:"butterflyset.png",
-price:"Rs.87"
-}
-
-]
+        {
+            name:"Royyala Pickle 500g",
+            image:"RP.png",
+            price:740
+        },
+
+        {
+            name:"Royyala Pickle 1kg",
+            image:"RP.png",
+            price:1350
+        },
+
+        {
+            name:"Dondakaya Pickle 500g",
+            image:"SNDTP.png",
+            price:360
+        },
+
+        {
+            name:"Dondakaya Pickle 1kg",
+            image:"SNDTP.png",
+            price:630
+        }
+
+    ],
+
+
+    combo: [
+
+        {
+            name:"Authentic Andhra Combo Pack",
+            image:"COMBO.png",
+            price:540
+        },
+
+        {
+            name:"Gongura Chicken Pickle & Gongura Royyala Pickle Combo",
+            image:"GONGURACOMBO.png",
+            price:685
+        }
+
+    ],
+
+
+    chocolates: [
+
+        {
+            name:"Customized Chocolates",
+            image:"KLNC.png",
+            price:99,
+            starting:true
+        }
+
+    ],
+
+
+    hairclips: [
+
+        {
+            name:"6 Pcs Multicolor Hair Claw Clips",
+            image:"hairclip6.png",
+            price:180
+        },
+
+        {
+            name:"Premium Black Hair Claw Clips",
+            image:"hairclipblack.png",
+            price:129
+        },
+
+        {
+            name:"5 Pcs Matte Finish Hair Claw Clips",
+            image:"hairclipmatte.png",
+            price:148
+        },
+
+        {
+            name:"6 Pcs Flower Hair Claw Clips",
+            image:"hairclipflower.png",
+            price:149
+        },
+
+        {
+            name:"5 Pcs Bow Shape Hair Claw Clips",
+            image:"hairclipbow.png",
+            price:145
+        }
+
+    ],
+
+
+    jewellery: [
+
+        {
+            name:"Women's Gold Plated Mangalsutra",
+            image:"mangalsutra.png",
+            price:230
+        },
+
+        {
+            name:"Gold Plated Designer Bangles with Red & Green Stone Work",
+            image:"banglesdesigner.png",
+            price:392
+        },
+
+        {
+            name:"Gold Plated Red & Green Stone Bangles",
+            image:"banglesredgreen.png",
+            price:230
+        },
+
+        {
+            name:"Stylish Oxidised Silver Earrings",
+            image:"oxidisedeearrings.png",
+            price:114
+        },
+
+        {
+            name:"Butterfly Pendant Necklace & Earrings Set",
+            image:"butterflyset.png",
+            price:87
+        }
+
+    ]
 
 };
 
 
+function showProducts(category){
 
-/* ================= SHOW PRODUCTS ================= */
+    const container =
+        document.getElementById("productsContainer");
 
-function showProducts(type){
+    const section =
+        document.getElementById("productsSection");
 
-let grid=document.getElementById("productGrid");
+    const categories =
+        document.getElementById("categoriesSection");
 
-let section=document.getElementById("productSection");
+    const title =
+        document.getElementById("productTitle");
+
+    const backBtn =
+        document.getElementById("backBtn");
 
 
-if(type==="podis"){
+    container.innerHTML = "";
 
-section.style.background=
-"url('PDBG.png') center/cover no-repeat";
+
+    const categoryNames = {
+
+        podis:" Podis",
+
+        pickles:" Pickles",
+
+        combo:" Combo Packs",
+
+        chocolates:" Customized Chocolates",
+
+        hairclips:" Hair Clips",
+
+        jewellery:" Jewellery"
+
+    };
+
+
+    title.innerText = categoryNames[category];
+
+
+    products[category].forEach(product => {
+
+        let priceText =
+            product.starting
+            ? "Starting " + product.price
+            : "" + product.price;
+
+
+        let message =
+            "I want to order " +
+            product.name +
+            " - " +
+            product.price;
+
+
+        const card =
+            document.createElement("div");
+
+        card.className = "product-card";
+
+
+        card.innerHTML = `
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+            >
+
+            <h3>${product.name}</h3>
+
+            <div class="price">
+                ${priceText}
+            </div>
+
+            <a
+                class="order-btn"
+                href="https://wa.me/919492356154?text=${encodeURIComponent(message)}"
+                target="_blank"
+            >
+                Order on WhatsApp
+            </a>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+
+    categories.style.display = "none";
+
+    section.style.display = "block";
+
+    backBtn.style.display = "block";
+
+
+    section.scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
-else if(type==="pickles"){
 
-section.style.background=
-"url('PKBG.png') center/cover no-repeat";
+function showCategories(){
 
-}
+    document.getElementById("productsSection")
+        .style.display = "none";
 
-else if(type==="combo"){
+    document.getElementById("categoriesSection")
+        .style.display = "block";
 
-section.style.background=
-"linear-gradient(135deg,#ff9800,#e91e63)";
-
-}
-
-else if(type==="hairclips"){
-
-section.style.background=
-"linear-gradient(135deg,#ff80ab,#fce4ec)";
-
-}
-
-else if(type==="jewellery"){
-
-section.style.background=
-"linear-gradient(135deg,#fff8dc,#d4af37)";
-
-}
-
-else{
-
-section.style.background="#f5f5f5";
-
-}
-
-
-grid.innerHTML="";
-
-
-data[type].forEach(item=>{
-
-
-let message=
-
-encodeURIComponent(
-
-"Hi KLN PRODUCTS, I want to order " +
-item.name +
-" - " +
-item.price
-
-);
-
-
-grid.innerHTML+=`
-
-<div class="card">
-
-<img
-src="${item.img}"
-alt="${item.name}"
->
-
-<h4>
-${item.name}
-</h4>
-
-<p class="price">
-${item.price}
-</p>
-
-<a
-class="btn"
-href="https://wa.me/919492356154?text=${message}"
-target="_blank"
->
-
- Order Now
-
-</a>
-
-</div>
-
-`;
-
-});
-
-
-section.scrollIntoView({
-behavior:"smooth"
-});
+    document.getElementById("categoriesSection")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
 </script>
 
-
 </body>
-
 </html>
